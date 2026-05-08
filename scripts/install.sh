@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # install.sh — Install Legacy Modernization Orchestrator agents and skills
-# Usage: bash scripts/install.sh [--global | --local] [--claude] [--codex] [--all]
+# Usage: bash scripts/install.sh [--global | --local] [--claude] [--codex] [--cursor] [--all]
 #
 # This script delegates to bin/install.js, which handles path-patching of
 # .github/skills/ references. Do NOT bypass it with plain cp commands.

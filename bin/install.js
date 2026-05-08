@@ -6,6 +6,7 @@
 //   npx legacy-modernization-orchestrator --local       (current project)
 //   npx legacy-modernization-orchestrator --claude      (Claude Code only)
 //   npx legacy-modernization-orchestrator --codex       (Codex CLI only)
+//   npx legacy-modernization-orchestrator --cursor      (Cursor only)
 //   npx legacy-modernization-orchestrator --uninstall   (remove)
 
 import fs from 'fs';
@@ -58,8 +59,15 @@ const isGlobal    = args.includes('--global') || args.includes('-g');
 const isLocal     = args.includes('--local')  || args.includes('-l');
 const claudeOnly  = args.includes('--claude');
 const codexOnly   = args.includes('--codex');
-const allRuntime  = args.includes('--all') || (!claudeOnly && !codexOnly);
-const runtimes    = allRuntime ? ['claude', 'codex'] : (claudeOnly ? ['claude'] : ['codex']);
+const cursorOnly  = args.includes('--cursor');
+const allRuntime  = args.includes('--all') || (!claudeOnly && !codexOnly && !cursorOnly);
+const runtimes    = allRuntime
+  ? ['claude', 'codex', 'cursor']
+  : [
+      ...(claudeOnly  ? ['claude']  : []),
+      ...(codexOnly   ? ['codex']   : []),
+      ...(cursorOnly  ? ['cursor']  : []),
+    ];
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -304,6 +312,36 @@ function install(scope, selectedRuntimes) {
       console.log('  Usage: $legacy-analysis');
     }
 
+    if (runtime === 'cursor') {
+      // Cursor agents are always project-scoped (.cursor/ in the current directory).
+      const cursorBase      = path.join(process.cwd(), '.cursor');
+      const cursorAgentDest = path.join(cursorBase, 'agents');
+      console.log('▶ Installing Cursor agents...');
+
+      const agentsJsonSrc = path.join(PACKAGE_ROOT, '.cursor', 'agents.json');
+      if (fs.existsSync(agentsJsonSrc)) {
+        fs.mkdirSync(cursorBase, { recursive: true });
+        fs.copyFileSync(agentsJsonSrc, path.join(cursorBase, 'agents.json'));
+        console.log('  ✓ .cursor/agents.json');
+      }
+
+      fs.mkdirSync(cursorAgentDest, { recursive: true });
+      const cursorAgentSrc = path.join(PACKAGE_ROOT, '.cursor', 'agents');
+      for (const agent of AGENTS) {
+        const src  = path.join(cursorAgentSrc, `${agent}.md`);
+        const dest = path.join(cursorAgentDest, `${agent}.md`);
+        if (fs.existsSync(src)) {
+          copyWithPatchedPaths(src, dest, skillsInstallDir, agentsInstallDir, docsInstallDir);
+          console.log(`  ✓ agent : ${agent}`);
+        }
+      }
+
+      console.log('');
+      console.log(`  Cursor → ${cursorBase}`);
+      console.log('  Note: Cursor agents are always project-scoped (no global Cursor config).');
+      console.log('  Usage: @legacy-analysis  (in Cursor chat)');
+    }
+
     console.log('');
   }
 
@@ -348,6 +386,18 @@ function uninstall(scope, selectedRuntimes) {
         if (removeIfExists(p)) console.log(`  ✓ removed skill : ${agent}`);
       }
     }
+
+    if (runtime === 'cursor') {
+      const cursorBase = path.join(process.cwd(), '.cursor');
+      console.log('▶ Removing Cursor agents...');
+      for (const agent of AGENTS) {
+        const p = path.join(cursorBase, 'agents', `${agent}.md`);
+        if (removeIfExists(p)) console.log(`  ✓ removed agent : ${agent}`);
+      }
+      const agentsJson = path.join(cursorBase, 'agents.json');
+      if (removeIfExists(agentsJson)) console.log('  ✓ removed .cursor/agents.json');
+    }
+
     console.log('');
   }
 
@@ -368,8 +418,8 @@ async function interactive() {
   const scopeAnswer = await ask(rl, '  Install where?\n  [1] Global — available in all projects (recommended)\n  [2] Local  — current project only\n  > ');
   const scope = scopeAnswer === '2' ? 'local' : 'global';
 
-  const runtimeAnswer = await ask(rl, '\n  Install for which runtimes?\n  [1] All (Claude Code + Codex CLI) (recommended)\n  [2] Claude Code only\n  [3] Codex CLI only\n  > ');
-  const selected = runtimeAnswer === '2' ? ['claude'] : runtimeAnswer === '3' ? ['codex'] : ['claude', 'codex'];
+  const runtimeAnswer = await ask(rl, '\n  Install for which runtimes?\n  [1] All (Claude Code + Codex CLI + Cursor) (recommended)\n  [2] Claude Code only\n  [3] Codex CLI only\n  [4] Cursor only\n  > ');
+  const selected = runtimeAnswer === '2' ? ['claude'] : runtimeAnswer === '3' ? ['codex'] : runtimeAnswer === '4' ? ['cursor'] : ['claude', 'codex', 'cursor'];
 
   rl.close();
   install(scope, selected);
@@ -379,7 +429,7 @@ function ciInstall() {
   console.log('');
   console.log('  Legacy Modernization Orchestrator');
   console.log('  Non-interactive environment detected — using defaults: global, all runtimes.');
-  console.log('  Override with: --local, --claude, or --codex flags.');
+  console.log('  Override with: --local, --claude, --codex, or --cursor flags.');
   console.log('');
   install('global', ['claude', 'codex']);
 }

@@ -1,7 +1,7 @@
 # Legacy Modernization Orchestrator
 
 A structured multi-agent framework for end-to-end legacy system modernization.
-Works with **Claude Code**, **OpenAI Codex CLI**, and **GitHub Copilot**.
+Works with **Claude Code**, **Cursor**, **OpenAI Codex CLI**, and **GitHub Copilot**.
 
 ---
 
@@ -58,7 +58,8 @@ npx legacy-modernization-orchestrator --local
 # Specific runtimes
 npx legacy-modernization-orchestrator --global --claude   # Claude Code only
 npx legacy-modernization-orchestrator --global --codex    # Codex CLI only
-npx legacy-modernization-orchestrator --global --all      # Both (default)
+npx legacy-modernization-orchestrator --local  --cursor   # Cursor only (always project-scoped)
+npx legacy-modernization-orchestrator --global --all      # All runtimes (default)
 
 # Uninstall
 npx legacy-modernization-orchestrator --uninstall --global --all
@@ -69,7 +70,7 @@ npx legacy-modernization-orchestrator --uninstall --global --all
 ```bash
 git clone https://github.com/your-org/legacy-modernization-orchestrator.git
 cd legacy-modernization-orchestrator
-bash scripts/install.sh --global --all
+bash scripts/install.sh --global --all   # Claude Code + Codex CLI + Cursor
 ```
 
 ---
@@ -81,9 +82,12 @@ bash scripts/install.sh --global --all
 | Claude Code | `~/.claude/agents/*.md` | Named subagents (`@agent-name`) |
 | Claude Code | `~/.claude/skills/<name>/SKILL.md` | Slash commands (`/agent-name`) |
 | Codex CLI | `~/.codex/skills/<name>/SKILL.md` | Skill commands (`$agent-name`) |
+| Cursor | `.cursor/agents.json` + `.cursor/agents/*.md` in the current project | Agent picker entries (`@agent-name` in Cursor chat) |
 | GitHub Copilot source | `~/.copilot/{agents,skills}/` if `~/.copilot` exists, otherwise `~/.github/{agents,skills}/` | Canonical agent and skill files used by Copilot, Claude, and Codex |
 
-> For **local** installs, canonical files go into `./.github/{agents,skills}/`, and runtime wrappers go into `./.claude/` and `./.codex/` inside your project.
+> For **local** installs, canonical files go into `./.github/{agents,skills}/`, and runtime wrappers go into `./.claude/`, `./.codex/`, and `./.cursor/` inside your project.
+>
+> **Cursor agents are always project-scoped** — Cursor has no global agent directory. The `--cursor` flag installs into `.cursor/` in the current working directory regardless of `--global` or `--local`.
 
 ---
 
@@ -121,6 +125,23 @@ $legacy-analysis path/to/my-legacy-app
 $target-architecture MyProject
 $backend-development MyProject
 ```
+
+### Cursor
+
+After installing (run `npx legacy-modernization-orchestrator --local --cursor` in your project), agents appear in the Cursor agent picker. Reference them in Cursor chat:
+
+```
+@legacy-modernization-orchestrator path/to/my-legacy-app
+@legacy-analysis path/to/my-legacy-app
+@target-architecture MyProject
+@backend-development MyProject
+```
+
+**Typical full workflow:**
+```
+@legacy-modernization-orchestrator path/to/my-legacy-app
+```
+The orchestrator runs all phases automatically, asking for scope confirmation before Phase 4.
 
 ### GitHub Copilot (VS Code)
 
@@ -176,6 +197,9 @@ The `.claude/agents/`, `.claude/skills/`, and `.codex/skills/` files installed o
   skills/          ← Claude Code slash command skills (/agent-name)
 .codex/
   skills/          ← Codex CLI skill definitions ($agent-name)
+.cursor/
+  agents.json      ← Cursor agent registry (id, name, description, path)
+  agents/          ← Cursor agent stubs — delegate to .github/agents/*.agent.md
 bin/
   install.js       ← npx installer
 scripts/
@@ -185,7 +209,7 @@ scripts/
   validate-roster.js ← Roster consistency checks across all source files
   generate-dod.js  ← Regenerate dod.json from SKILL.md DoD sections
   check-adr-prompts.js ← Advisory ADR capture check
-  sync-wrappers.js ← Sync .claude/.codex wrappers from .github/skills
+  sync-wrappers.js ← Sync .claude/.codex/.cursor wrappers from .github/skills
   new-skill.sh     ← Scaffold a new skill from template
 AGENTS.md          ← Loaded by Codex CLI automatically
 CLAUDE.md          ← Loaded by Claude Code CLI automatically

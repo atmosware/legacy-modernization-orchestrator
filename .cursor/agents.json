@@ -1,0 +1,136 @@
+{
+  "agents": [
+    {
+      "id": "legacy-modernization-orchestrator",
+      "name": "Legacy Modernization Orchestrator",
+      "description": "Master orchestrator for end-to-end legacy system modernization. Use when: starting a full legacy modernization project, orchestrating all redesign phases in order, validating phase completion before proceeding, coordinating analysis → design → development → comparison phases. Invokes other agents in sequence with DoD gates.",
+      "path": "agents/legacy-modernization-orchestrator.md"
+    },
+    {
+      "id": "legacy-analysis",
+      "name": "Legacy Analysis",
+      "description": "Phase 1 — Legacy system analysis: reverse engineering, technical debt identification, business flow mapping, DB schema reverse engineering, stored procedure/trigger inventory, security posture assessment, data quality assessment, integration maps, and risk matrix. Always the first phase of any modernization project.",
+      "path": "agents/legacy-analysis.md"
+    },
+    {
+      "id": "legacy-architecture",
+      "name": "Legacy Architecture",
+      "description": "Phase 2 — Legacy architecture visualization: component diagrams, data flow maps, mermaid HTML diagrams, architectural constraint documentation. Runs after legacy-analysis and produces visual representations of the current system before redesign.",
+      "path": "agents/legacy-architecture.md"
+    },
+    {
+      "id": "tech-stack-selection",
+      "name": "Tech Stack Selection",
+      "description": "Phase 2.5 gate — Collects all flexible technology choices (backend language, frontend framework, database, mobile delivery model, cloud provider, secret manager, deployment platform, observability stack) and writes them to tech_stack_selections.md. All downstream phases read from this file exclusively.",
+      "path": "agents/tech-stack-selection.md"
+    },
+    {
+      "id": "target-architecture",
+      "name": "Target Architecture",
+      "description": "Phase 3 — Target system architecture design: Clean/Hexagonal/DDD patterns, service boundaries, bounded contexts, API-first design, mermaid architecture diagrams in HTML. User-selected stack: Java/.NET/Python/Go backend, React/Vue/Angular/Svelte frontend, Kotlin/Swift mobile.",
+      "path": "agents/target-architecture.md"
+    },
+    {
+      "id": "ui-ux-design",
+      "name": "UI/UX Design",
+      "description": "Phase 4a — UI/UX design: wireframes, design system, component tokens, user journeys for web and mobile, WCAG accessibility compliance, HTML design previews. Must complete before frontend, iOS, Android, or cross-platform development phases begin.",
+      "path": "agents/ui-ux-design.md"
+    },
+    {
+      "id": "backend-development",
+      "name": "Backend Development",
+      "description": "Phase 4b — Backend implementation: Java Spring Boot / .NET ASP.NET Core / Python FastAPI / Go Gin-Fiber. Clean/hexagonal architecture, DDD modules, REST APIs with OpenAPI, JWT/OAuth2, ORM repositories, unit/integration/Testcontainers testing, observability. Requires target_architecture artifacts.",
+      "path": "agents/backend-development.md"
+    },
+    {
+      "id": "frontend-development",
+      "name": "Frontend Development",
+      "description": "Phase 4c — Frontend implementation: React / Vue / Angular / Svelte (TypeScript). Design system components, TanStack Query / Zustand / Pinia / NgRx state management, Axios API integration, code splitting, Vitest/Playwright testing. Requires UI/UX design artifacts.",
+      "path": "agents/frontend-development.md"
+    },
+    {
+      "id": "ios-development",
+      "name": "iOS Development",
+      "description": "Phase 4d — Native iOS app: Swift SwiftUI, MVVM, Combine/async-await, Keychain token storage, URLSession networking, CoreData persistence, push notifications, deep linking, XCTest unit/UI testing, App Store deployment. Requires UI/UX design artifacts.",
+      "path": "agents/ios-development.md"
+    },
+    {
+      "id": "android-development",
+      "name": "Android Development",
+      "description": "Phase 4e — Native Android app: Kotlin Jetpack Compose, MVVM Clean Architecture, Coroutines Flow, EncryptedSharedPreferences/Keystore, Retrofit/OkHttp, Room, FCM, deep linking, JUnit/Mockk/Turbine testing, Espresso/Compose UI testing, Play Store deployment. Requires UI/UX design artifacts.",
+      "path": "agents/android-development.md"
+    },
+    {
+      "id": "data-migration",
+      "name": "Data Migration",
+      "description": "Phase 4f — Zero-data-loss schema migration: Flyway/Liquibase/Alembic/Goose scripts, dual-write reconciliation, large-table chunking, row-count/checksum validation, referential integrity repair, data cleansing pipelines, cutover freeze SQL, rollback procedures. Requires legacy_analysis and target_architecture artifacts.",
+      "path": "agents/data-migration.md"
+    },
+    {
+      "id": "security-review",
+      "name": "Security Review",
+      "description": "Phase 4g — OWASP Top 10 checks per layer: hardcoded-secret detection, dependency CVE scanning (OWASP Dependency-Check / Trivy), API authorization audit, JWT validation review, CORS/CSP configuration, Docker image security. Produces security findings report before go-live.",
+      "path": "agents/security-review.md"
+    },
+    {
+      "id": "devops-infra",
+      "name": "DevOps & Infrastructure",
+      "description": "Phase 4h — Infrastructure as code: Kubernetes manifests, Helm charts, Terraform/Pulumi modules, GitHub Actions / GitLab CI pipelines, Prometheus alerting rules, Grafana dashboards, HashiCorp Vault / External Secrets Operator, Docker image hardening, container registry setup.",
+      "path": "agents/devops-infra.md"
+    },
+    {
+      "id": "cross-platform-mobile",
+      "name": "Cross-Platform Mobile",
+      "description": "Phase 4i (optional, non-default) — Flutter (Dart) or React Native (TypeScript) cross-platform app for iOS and Android. Riverpod/BLoC or Zustand/Redux Toolkit state management, secure storage, Dio/Axios networking, FCM, flutter integration_test or Detox E2E testing. Mutually exclusive with native ios-development/android-development for the same platform.",
+      "path": "agents/cross-platform-mobile.md"
+    },
+    {
+      "id": "compare-legacy-to-new",
+      "name": "Compare Legacy to New",
+      "description": "Phase 5 — Gap analysis between legacy and redesigned system: component mapping, migration strategy, before-after mermaid HTML diagrams, regression identification, improvement documentation. Runs after legacy analysis and at least one Phase 4 development phase complete.",
+      "path": "agents/compare-legacy-to-new.md"
+    },
+    {
+      "id": "final-validation",
+      "name": "Final Validation",
+      "description": "Phase 6 — Release readiness gate: functional completeness check, performance baseline capture, security clearance review, operational readiness verification, smoke test plan, go/no-go decision before production cutover. Requires Phase 5 comparison report and all in-scope Phase 4 artifacts.",
+      "path": "agents/final-validation.md"
+    },
+    {
+      "id": "java-springboot",
+      "name": "Java Spring Boot",
+      "description": "Tier-2 backend skill — Apply when tech_stack_selections.md confirms Java 21 + Spring Boot 3. Implements Spring Boot clean/hexagonal architecture, Spring Data JPA repositories, Micrometer observability, Logback/SLF4J logging, JUnit 5 unit tests, Testcontainers integration tests, Maven or Gradle build, multi-stage Dockerfile.",
+      "path": "agents/java-springboot.md"
+    },
+    {
+      "id": "dotnet-aspnetcore",
+      "name": ".NET ASP.NET Core",
+      "description": "Tier-2 backend skill — Apply when tech_stack_selections.md confirms .NET 9 + ASP.NET Core. Implements clean/hexagonal architecture, EF Core repositories, Serilog structured logging, xUnit unit tests, Testcontainers.NET integration tests, MSBuild project structure, multi-stage Dockerfile.",
+      "path": "agents/dotnet-aspnetcore.md"
+    },
+    {
+      "id": "python-fastapi",
+      "name": "Python FastAPI",
+      "description": "Tier-2 backend skill — Apply when tech_stack_selections.md confirms Python 3.12 + FastAPI. Implements clean/hexagonal architecture, SQLAlchemy 2 async repositories, Alembic migrations, Pydantic v2 schemas, pytest-asyncio tests, Testcontainers integration tests, structlog logging, pyproject.toml project setup, multi-stage Dockerfile.",
+      "path": "agents/python-fastapi.md"
+    },
+    {
+      "id": "go-gin-fiber",
+      "name": "Go Gin/Fiber",
+      "description": "Tier-2 backend skill — Apply when tech_stack_selections.md confirms Go 1.23 + Gin or Fiber. Implements Go clean/hexagonal architecture, GORM or sqlc data layer, zap/zerolog structured logging, testcontainers-go integration tests, Air live reload, Docker scratch image, go vet and staticcheck quality gates.",
+      "path": "agents/go-gin-fiber.md"
+    },
+    {
+      "id": "quality-playbook",
+      "name": "Quality Playbook",
+      "description": "Advisory reference (no output artifact) — Evaluates architecture decisions (monolith vs microservices, DB strategy), design pattern selection, testing strategy, code quality standards, API design options. Consult at any phase without disrupting phase sequence. Findings are embedded in the calling phase's output.",
+      "path": "agents/quality-playbook.md"
+    },
+    {
+      "id": "agent-governance",
+      "name": "Agent Governance",
+      "description": "Advisory reference (no output artifact) — Framework governance: selecting the correct agent, understanding phase chaining rules and DoD gates, choosing between full orchestration and standalone phase modes, resuming an in-progress project, enforcing the agent/skill file contract.",
+      "path": "agents/agent-governance.md"
+    }
+  ]
+}

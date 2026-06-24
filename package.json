@@ -1,6 +1,6 @@
 {
   "name": "nexia-orchestrator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Nexia — multi-agent framework for end-to-end legacy system modernization. Installs agents and skills for Claude Code and Codex CLI.",
   "keywords": [

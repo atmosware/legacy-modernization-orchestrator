@@ -1,6 +1,6 @@
 ---
-name: agent-governance
-description: 'Framework governance reference agent for the legacy-modernization-orchestrator. Advisory only — produces no standalone output artifact. Use when: selecting the correct agent to invoke, understanding phase chaining rules and DoD gates, choosing between full orchestration and standalone phase modes, resuming an in-progress project, enforcing the agent/skill file contract.'
+name: nexia-agent-governance
+description: 'Framework governance reference agent for the nexia-orchestrator. Advisory only — produces no standalone output artifact. Use when: selecting the correct agent to invoke, understanding phase chaining rules and DoD gates, choosing between full orchestration and standalone phase modes, resuming an in-progress project, enforcing the agent/skill file contract.'
 argument-hint: 'Framework governance reference — no argument required'
 ---
 
@@ -20,7 +20,7 @@ argument-hint: 'Framework governance reference — no argument required'
 ## Skill Reference
 Consult the full governance rules defined in:
 
-> [`agent-governance` skill](../skills/agent-governance/SKILL.md)
+> [`agent-governance` skill](../skills/nexia-agent-governance/SKILL.md)
 
 **Advisory use** — this agent provides selection and chaining rules. The operative work is performed by the invoked sub-agent. **Do NOT skip this consultation when phase ordering or agent selection is uncertain.**
 

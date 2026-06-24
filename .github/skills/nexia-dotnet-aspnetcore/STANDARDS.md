@@ -1,9 +1,9 @@
 # .NET 9 + ASP.NET Core — Standards
 
-> **Tier 2 (language-specific) — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md) and [Backend Development Standards (Tier 2)](../backend-development/STANDARDS.md). Core and backend-agnostic standards always take precedence; this file adds .NET/ASP.NET Core–specific rules only.
+> **Tier 2 (language-specific) — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md) and [Backend Development Standards (Tier 2)](../nexia-backend-development/STANDARDS.md). Core and backend-agnostic standards always take precedence; this file adds .NET/ASP.NET Core–specific rules only.
 
 .NET and ASP.NET Core specific standards for backend development.
-These accompany the language-agnostic [backend-development/STANDARDS.md](../backend-development/STANDARDS.md) and [SKILL.md](../backend-development/SKILL.md).
+These accompany the language-agnostic [backend-development/STANDARDS.md](../nexia-backend-development/STANDARDS.md) and [SKILL.md](../nexia-backend-development/SKILL.md).
 
 ---
 

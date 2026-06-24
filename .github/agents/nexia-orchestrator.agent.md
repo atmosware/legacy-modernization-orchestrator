@@ -1,5 +1,5 @@
 ---
-name: legacy-modernization-orchestrator
+name: nexia-orchestrator
 description: 'Master orchestrator agent for end-to-end legacy system modernization. Use when: starting a full legacy modernization project, orchestrating all redesign phases in order, running the complete legacy modernization workflow, validating phase completion before proceeding, coordinating analysis design development comparison phases. Development targets (backend, web frontend, iOS, Android) are optional and selected per project scope. Invokes other redesign agents in sequence with DoD gates.'
 argument-hint: 'Legacy project path or name to begin full end-to-end redesign workflow'
 ---
@@ -28,39 +28,39 @@ Phase 1 → Phase 2 → Phase 2.5 → Phase 3 → [Scope Selection] → Phase 4 
 
 | Phase | Agent | Role | Required? |
 |---|---|---|---|
-| 1 | [`legacy-analysis`](./legacy-analysis.agent.md) | Legacy Analysis | Always |
-| 2 | [`legacy-architecture`](./legacy-architecture.agent.md) | Legacy Architecture Visualization | Always |
-| 2.5 | [`tech-stack-selection`](../skills/tech-stack-selection/SKILL.md) | User confirms all target tech choices | Always |
-| 3 | [`target-architecture`](./target-architecture.agent.md) | Target Architecture Design | Always |
-| 4a | [`ui-ux-design`](./ui-ux-design.agent.md) | UX & Interface Design | If any client UI needed |
-| 4b | [`backend-development`](./backend-development.agent.md) | Backend Implementation | **Optional** |
-| 4c | [`frontend-development`](./frontend-development.agent.md) | Web Frontend Implementation | **Optional** |
-| 4d | [`ios-development`](./ios-development.agent.md) | iOS Mobile App | **Optional** |
-| 4e | [`android-development`](./android-development.agent.md) | Android Mobile App | **Optional** |
-| 4f | [`data-migration`](./data-migration.agent.md) | Data Migration & ETL | **Optional** |
-| 4g | [`security-review`](./security-review.agent.md) | Security Audit (OWASP Top 10) | **Optional** |
-| 4h | [`devops-infra`](./devops-infra.agent.md) | Infrastructure-as-Code & CI/CD | **Optional** |
-| 4i | [`cross-platform-mobile`](./cross-platform-mobile.agent.md) | Flutter / React Native Mobile App | **Optional (non-default)** |
-| 5 | [`compare-legacy-to-new`](./compare-legacy-to-new.agent.md) | Gap Analysis & Comparison | After any dev phase complete |
-| 6 | [`final-validation`](./final-validation.agent.md) | Cutover Readiness | After Phase 5 |
+| 1 | [`nexia-legacy-analysis`](./legacy-analysis.agent.md) | Legacy Analysis | Always |
+| 2 | [`nexia-legacy-architecture`](./legacy-architecture.agent.md) | Legacy Architecture Visualization | Always |
+| 2.5 | [`nexia-tech-stack-selection`](../skills/nexia-tech-stack-selection/SKILL.md) | User confirms all target tech choices | Always |
+| 3 | [`nexia-target-architecture`](./target-architecture.agent.md) | Target Architecture Design | Always |
+| 4a | [`nexia-ui-ux-design`](./ui-ux-design.agent.md) | UX & Interface Design | If any client UI needed |
+| 4b | [`nexia-backend-development`](./backend-development.agent.md) | Backend Implementation | **Optional** |
+| 4c | [`nexia-frontend-development`](./frontend-development.agent.md) | Web Frontend Implementation | **Optional** |
+| 4d | [`nexia-ios-development`](./ios-development.agent.md) | iOS Mobile App | **Optional** |
+| 4e | [`nexia-android-development`](./android-development.agent.md) | Android Mobile App | **Optional** |
+| 4f | [`nexia-data-migration`](./data-migration.agent.md) | Data Migration & ETL | **Optional** |
+| 4g | [`nexia-security-review`](./security-review.agent.md) | Security Audit (OWASP Top 10) | **Optional** |
+| 4h | [`nexia-devops-infra`](./devops-infra.agent.md) | Infrastructure-as-Code & CI/CD | **Optional** |
+| 4i | [`nexia-cross-platform-mobile`](./cross-platform-mobile.agent.md) | Flutter / React Native Mobile App | **Optional (non-default)** |
+| 5 | [`nexia-compare-legacy-to-new`](./compare-legacy-to-new.agent.md) | Gap Analysis & Comparison | After any dev phase complete |
+| 6 | [`nexia-final-validation`](./final-validation.agent.md) | Cutover Readiness | After Phase 5 |
 
 ### Parallelizable phases (after Phase 3 + scope confirmed)
 
 | Phase | Gate to start | Safe to run in parallel with | Notes |
 |---|---|---|---|
-| 4a `ui-ux-design` | Phase 3 complete | 4b | **Must complete before** 4c, 4d, 4e — they depend on wireframes |
-| 4b `backend-development` | Phase 3 complete | 4a, 4h | Backend does not depend on UI wireframes |
-| 4c `frontend-development` | **4a complete** | 4b, 4d, 4e, 4f, 4h | Cannot start until wireframes exist |
-| 4d `ios-development` | **4a complete** | 4b, 4c, 4e, 4f, 4h | Cannot start until mobile design system exists |
-| 4e `android-development` | **4a complete** | 4b, 4c, 4d, 4f, 4h | Cannot start until mobile design system exists |
-| 4f `data-migration` | Phase 3 complete | 4b, 4c, 4d, 4e, 4i, 4h | Depends on target schema (Phase 3); independent of other Phase 4 sub-phases |
-| 4g `security-review` | **At least one of 4b/4c/4d/4e/4i complete** | Phase 5 | Code must exist to audit; can overlap with compare phase |
-| 4h `devops-infra` | Phase 3 complete + relevant deployable artifacts started | 4b, 4c, 4d, 4e, 4i, 4f | Produces IaC/CI-CD/monitoring for backend, web, and mobile delivery paths as applicable; feeds 4g and Phase 6 |
-| 4i `cross-platform-mobile` | **4a complete** + `tech_stack_selections.md` confirms Flutter or RN | 4b, 4c, 4f, 4h | **Mutually exclusive with 4d/4e for the same platform** — do not run both native and cross-platform |
+| 4a `nexia-ui-ux-design` | Phase 3 complete | 4b | **Must complete before** 4c, 4d, 4e — they depend on wireframes |
+| 4b `nexia-backend-development` | Phase 3 complete | 4a, 4h | Backend does not depend on UI wireframes |
+| 4c `nexia-frontend-development` | **4a complete** | 4b, 4d, 4e, 4f, 4h | Cannot start until wireframes exist |
+| 4d `nexia-ios-development` | **4a complete** | 4b, 4c, 4e, 4f, 4h | Cannot start until mobile design system exists |
+| 4e `nexia-android-development` | **4a complete** | 4b, 4c, 4d, 4f, 4h | Cannot start until mobile design system exists |
+| 4f `nexia-data-migration` | Phase 3 complete | 4b, 4c, 4d, 4e, 4i, 4h | Depends on target schema (Phase 3); independent of other Phase 4 sub-phases |
+| 4g `nexia-security-review` | **At least one of 4b/4c/4d/4e/4i complete** | Phase 5 | Code must exist to audit; can overlap with compare phase |
+| 4h `nexia-devops-infra` | Phase 3 complete + relevant deployable artifacts started | 4b, 4c, 4d, 4e, 4i, 4f | Produces IaC/CI-CD/monitoring for backend, web, and mobile delivery paths as applicable; feeds 4g and Phase 6 |
+| 4i `nexia-cross-platform-mobile` | **4a complete** + `tech_stack_selections.md` confirms Flutter or RN | 4b, 4c, 4f, 4h | **Mutually exclusive with 4d/4e for the same platform** — do not run both native and cross-platform |
 
 ### Cross-platform mobile — optional (non-default)
 
-> **Native (Swift/Kotlin) is the default and recommended path.** Cross-platform mobile is an optional path (Phase 4i) via the `cross-platform-mobile` skill.
+> **Native (Swift/Kotlin) is the default and recommended path.** Cross-platform mobile is an optional path (Phase 4i) via the `nexia-cross-platform-mobile` skill.
 >
 > | Decision | When | Phase |
 > |---|---|---|
@@ -70,7 +70,7 @@ Phase 1 → Phase 2 → Phase 2.5 → Phase 3 → [Scope Selection] → Phase 4 
 > | React Native | Unified codebase, team knows React/TS, confirmed in `tech_stack_selections.md` | 4i |
 >
 > **4i is mutually exclusive with 4d/4e for the same mobile target.** Do NOT run both native and cross-platform for the same platform.
-> Do NOT attempt to generate Flutter/React Native code via `ios-development` or `android-development` — the output will be incorrect.
+> Do NOT attempt to generate Flutter/React Native code via `nexia-ios-development` or `nexia-android-development` — the output will be incorrect.
 > KMM is not supported — it is a business-logic sharing layer, not a full UI framework.
 
 ---
@@ -148,21 +148,21 @@ Create `ai-driven-development/redesign_progress.md` to track all phases:
 
 | Phase | Agent | Status | Started | Completed | Notes |
 |---|---|---|---|---|---|
-| 1 | legacy-analysis | ⬜ Not Started | — | — | |
-| 2 | legacy-architecture | ⬜ Not Started | — | — | |
-| 2.5 | tech-stack-selection | ⬜ Not Started | — | — | |
-| 3 | target-architecture | ⬜ Not Started | — | — | |
-| 4a | ui-ux-design | ⬜ N/A | — | — | ← if not in scope |
-| 4b | backend-development | ⬜ N/A | — | — | ← if not in scope |
-| 4c | frontend-development | ⬜ N/A | — | — | ← if not in scope |
-| 4d | ios-development | ⬜ N/A | — | — | ← if not in scope |
-| 4e | android-development | ⬜ N/A | — | — | ← if not in scope |
-| 4f | data-migration | ⬜ N/A | — | — | ← if not in scope |
-| 4g | security-review | ⬜ N/A | — | — | ← if not in scope |
-| 4h | devops-infra | ⬜ N/A | — | — | ← if not in scope |
-| 4i | cross-platform-mobile | ⬜ N/A | — | — | ← only if Flutter/RN confirmed in tech_stack_selections.md |
-| 5 | compare-legacy-to-new | ⬜ Not Started | — | — | |
-| 6 | final-validation | ⬜ Not Started | — | — | |
+| 1 | nexia-legacy-analysis | ⬜ Not Started | — | — | |
+| 2 | nexia-legacy-architecture | ⬜ Not Started | — | — | |
+| 2.5 | nexia-tech-stack-selection | ⬜ Not Started | — | — | |
+| 3 | nexia-target-architecture | ⬜ Not Started | — | — | |
+| 4a | nexia-ui-ux-design | ⬜ N/A | — | — | ← if not in scope |
+| 4b | nexia-backend-development | ⬜ N/A | — | — | ← if not in scope |
+| 4c | nexia-frontend-development | ⬜ N/A | — | — | ← if not in scope |
+| 4d | nexia-ios-development | ⬜ N/A | — | — | ← if not in scope |
+| 4e | nexia-android-development | ⬜ N/A | — | — | ← if not in scope |
+| 4f | nexia-data-migration | ⬜ N/A | — | — | ← if not in scope |
+| 4g | nexia-security-review | ⬜ N/A | — | — | ← if not in scope |
+| 4h | nexia-devops-infra | ⬜ N/A | — | — | ← if not in scope |
+| 4i | nexia-cross-platform-mobile | ⬜ N/A | — | — | ← only if Flutter/RN confirmed in tech_stack_selections.md |
+| 5 | nexia-compare-legacy-to-new | ⬜ Not Started | — | — | |
+| 6 | nexia-final-validation | ⬜ Not Started | — | — | |
 
 ## Status Key: ⬜ Not Started | 🔄 In Progress | ✅ Complete | ❌ Blocked | — N/A (out of scope)
 ```
@@ -276,11 +276,11 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ## Phase 1: Legacy Analysis
-**Agent**: [`legacy-analysis`](./legacy-analysis.agent.md)
+**Agent**: [`nexia-legacy-analysis`](./legacy-analysis.agent.md)
 **Role**: Senior Expert Technical Analyst
 
 **Execute**:
-> Invoke the `legacy-analysis` agent — it will follow all steps in its skill
+> Invoke the `nexia-legacy-analysis` agent — it will follow all steps in its skill
 
 **Produce**:
 - `ai-driven-development/docs/legacy_analysis/legacy_analysis.md`
@@ -297,13 +297,13 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ## Phase 2: Legacy Architecture Visualization
-**Agent**: [`legacy-architecture`](./legacy-architecture.agent.md)
+**Agent**: [`nexia-legacy-architecture`](./legacy-architecture.agent.md)
 **Role**: Senior Master Architect
 
 **Requires**: Phase 1 complete (`legacy_analysis.md`)
 
 **Execute**:
-> Invoke the `legacy-architecture` agent — it will follow all steps in its skill
+> Invoke the `nexia-legacy-architecture` agent — it will follow all steps in its skill
 
 **Produce**:
 - `ai-driven-development/docs/legacy_architecture/legacy_architecture.md`
@@ -321,7 +321,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ## Phase 2.5: Tech Stack Selection Gate
-**Agent**: [`tech-stack-selection`](../skills/tech-stack-selection/SKILL.md)  
+**Agent**: [`nexia-tech-stack-selection`](../skills/nexia-tech-stack-selection/SKILL.md)  
 **Role**: Orchestrator — gather all technology choices from the user before any design or code work begins  
 **Required**: Always — this gate must complete before Phase 3 starts
 
@@ -330,7 +330,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 > **Purpose**: Collect and persist every flexible technology decision for all in-scope tiers in one place. All downstream agents (Phases 3–6) will read `tech_stack_selections.md` instead of asking the user again.
 
 **Execute**:
-> Read and follow **`.github/skills/tech-stack-selection/SKILL.md`** in full — it contains the complete questionnaire, skip/default logic, custom-value handling (including the protocol for requesting supporting docs when an unfamiliar or enterprise-specific technology is entered), and the output schema for all tiers.
+> Read and follow **`.github/skills/nexia-tech-stack-selection/SKILL.md`** in full — it contains the complete questionnaire, skip/default logic, custom-value handling (including the protocol for requesting supporting docs when an unfamiliar or enterprise-specific technology is entered), and the output schema for all tiers.
 
 **DoD Gate** — do NOT proceed to Phase 3 until ALL are checked:
 - [ ] User has answered all questions for all in-scope tiers (or selected the default stack)
@@ -348,13 +348,13 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ## Phase 3: Target Architecture Design
-**Agent**: [`target-architecture`](./target-architecture.agent.md)
+**Agent**: [`nexia-target-architecture`](./target-architecture.agent.md)
 **Role**: Senior Master Architect
 
 **Requires**: Phase 2.5 complete (`tech_stack_selections.md` confirmed)
 
 **Execute**:
-> Invoke the `target-architecture` agent — it will read `tech_stack_selections.md` for all flexible tech choices and follow all steps in its skill.
+> Invoke the `nexia-target-architecture` agent — it will read `tech_stack_selections.md` for all flexible tech choices and follow all steps in its skill.
 >
 > **Pass the Technology Profile from `legacy_analysis.md` Section 10** so the target-architecture agent can skip layers, diagrams, tech choices, and ADRs that are not applicable to this repository's scope.
 
@@ -383,14 +383,14 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4a: UI/UX Design
-**Agent**: [`ui-ux-design`](./ui-ux-design.agent.md)
+**Agent**: [`nexia-ui-ux-design`](./ui-ux-design.agent.md)
 **Role**: Senior Master UI/UX Developer
 **Required if**: Any client UI is in scope (web, iOS, or Android)
 
 **Requires**: Phase 3 complete (API contracts + user types known)
 
 **Execute**:
-> Invoke the `ui-ux-design` agent — it will follow all steps in its skill
+> Invoke the `nexia-ui-ux-design` agent — it will follow all steps in its skill
 
 **Produce**:
 - `ai-driven-development/docs/ui_design/ui_ux_pages.md`
@@ -408,7 +408,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4b: Backend Development *(Optional)*
-**Agent**: [`backend-development`](./backend-development.agent.md)
+**Agent**: [`nexia-backend-development`](./backend-development.agent.md)
 **Role**: Senior Master Backend Developer
 **Required if**: Backend is in scope (confirmed in Scope Selection)
 **Skip if**: Backend not selected — mark as N/A in tracker
@@ -416,7 +416,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 3 complete (architecture, service boundaries, DB choice, auth decided)
 
 **Execute**:
-> Invoke the `backend-development` agent — it will confirm user tech choices and work through all 13 phases in its skill
+> Invoke the `nexia-backend-development` agent — it will confirm user tech choices and work through all 13 phases in its skill
 
 **Produce**:
 - `ai-driven-development/development/be_development_todo.md`
@@ -434,7 +434,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4c: Web Frontend Development *(Optional)*
-**Agent**: [`frontend-development`](./frontend-development.agent.md)
+**Agent**: [`nexia-frontend-development`](./frontend-development.agent.md)
 **Role**: Senior Master Frontend Developer
 **Required if**: Web Frontend is in scope (confirmed in Scope Selection)
 **Skip if**: Web frontend not selected — mark as N/A in tracker
@@ -442,7 +442,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 4a complete (wireframes) + Phase 4b backend APIs available or OpenAPI mock
 
 **Execute**:
-> Invoke the `frontend-development` agent — it will confirm user tech choices and work through all 12 phases in its skill
+> Invoke the `nexia-frontend-development` agent — it will confirm user tech choices and work through all 12 phases in its skill
 
 **Produce**:
 - `ai-driven-development/development/fe_development_todo.md`
@@ -459,7 +459,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4d: iOS Mobile Development *(Optional)*
-**Agent**: [`ios-development`](./ios-development.agent.md)
+**Agent**: [`nexia-ios-development`](./ios-development.agent.md)
 **Role**: Senior Master iOS Developer
 **Required if**: iOS App is in scope (confirmed in Scope Selection)
 **Skip if**: iOS not selected — mark as N/A in tracker
@@ -467,7 +467,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 4a complete (mobile wireframes) + backend APIs available or OpenAPI mock
 
 **Execute**:
-> Invoke the `ios-development` agent — it will confirm user tech choices and work through all 12 phases in its skill
+> Invoke the `nexia-ios-development` agent — it will confirm user tech choices and work through all 12 phases in its skill
 
 **Produce**:
 - `ai-driven-development/development/mobile_development/ios/ios_development_todo.md`
@@ -486,7 +486,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4e: Android Mobile Development *(Optional)*
-**Agent**: [`android-development`](./android-development.agent.md)
+**Agent**: [`nexia-android-development`](./android-development.agent.md)
 **Role**: Senior Master Android Developer
 **Required if**: Android App is in scope (confirmed in Scope Selection)
 **Skip if**: Android not selected — mark as N/A in tracker
@@ -494,7 +494,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 4a complete (mobile wireframes) + backend APIs available or OpenAPI mock
 
 **Execute**:
-> Invoke the `android-development` agent — it will confirm user tech choices and work through all 12 phases in its skill
+> Invoke the `nexia-android-development` agent — it will confirm user tech choices and work through all 12 phases in its skill
 
 **Produce**:
 - `ai-driven-development/development/mobile_development/android/android_development_todo.md`
@@ -513,7 +513,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4f: Data Migration *(Optional)*
-**Agent**: [`data-migration`](./data-migration.agent.md)
+**Agent**: [`nexia-data-migration`](./data-migration.agent.md)
 **Role**: Senior Data Migration Engineer
 **Required if**: Legacy data must be transformed, reconciled, or moved into a new schema
 **Skip if**: No data migration is needed - mark as N/A in tracker
@@ -521,7 +521,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 3 complete (target schema and bounded contexts known)
 
 **Execute**:
-> Invoke the `data-migration` agent - it will follow all migration planning, ETL, validation, cutover, and rollback steps in its skill
+> Invoke the `nexia-data-migration` agent - it will follow all migration planning, ETL, validation, cutover, and rollback steps in its skill
 
 **Produce**:
 - `ai-driven-development/development/data_migration/data_migration_todo.md`
@@ -542,7 +542,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4g: Security Review *(Optional)*
-**Agent**: [`security-review`](./security-review.agent.md)
+**Agent**: [`nexia-security-review`](./security-review.agent.md)
 **Role**: Senior Application Security Engineer
 **Required if**: Security review is in scope before go-live
 **Skip if**: Security review intentionally deferred - mark as N/A in tracker only with explicit user acceptance
@@ -550,7 +550,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 3 complete plus at least one in-scope Phase 4 code artifact (backend, frontend, native mobile, or cross-platform mobile)
 
 **Execute**:
-> Invoke the `security-review` agent - it will audit all in-scope layers against OWASP Top 10, dependency risk, secret exposure, and deployment hardening controls
+> Invoke the `nexia-security-review` agent - it will audit all in-scope layers against OWASP Top 10, dependency risk, secret exposure, and deployment hardening controls
 
 **Produce**:
 - `ai-driven-development/docs/security_review/security_review_report.md`
@@ -567,7 +567,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4h: DevOps & Infrastructure *(Optional)*
-**Agent**: [`devops-infra`](./devops-infra.agent.md)
+**Agent**: [`nexia-devops-infra`](./devops-infra.agent.md)
 **Role**: Senior DevOps Platform Engineer
 **Required if**: Infrastructure-as-code, CI/CD, runtime environments, or observability assets are in scope
 **Skip if**: Platform/infrastructure work is not part of this engagement - mark as N/A in tracker
@@ -575,7 +575,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 3 complete; backend implementation started if infra depends on real service artifacts
 
 **Execute**:
-> Invoke the `devops-infra` agent - it will produce IaC, pipeline, secret-management, and observability assets by following its skill in full
+> Invoke the `nexia-devops-infra` agent - it will produce IaC, pipeline, secret-management, and observability assets by following its skill in full
 
 **Produce**:
 - `ai-driven-development/development/infra/infra_todo.md`
@@ -597,7 +597,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ### Phase 4i: Cross-Platform Mobile Development *(Optional, non-default)*
-**Agent**: [`cross-platform-mobile`](./cross-platform-mobile.agent.md)
+**Agent**: [`nexia-cross-platform-mobile`](./cross-platform-mobile.agent.md)
 **Role**: Senior Expert Cross-Platform Mobile Developer
 **Required if**: Mobile is in scope and `tech_stack_selections.md` confirms Flutter or React Native
 **Skip if**: Native iOS and/or Android delivery is selected instead - mark as N/A in tracker
@@ -605,7 +605,7 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 **Requires**: Phase 4a complete (mobile wireframes) + Phase 3 complete + `tech_stack_selections.md` `§ Mobile` confirms Flutter or React Native + backend APIs available or OpenAPI mock
 
 **Execute**:
-> Invoke the `cross-platform-mobile` agent - it will follow all setup, architecture, feature, testing, and deployment steps in its skill
+> Invoke the `nexia-cross-platform-mobile` agent - it will follow all setup, architecture, feature, testing, and deployment steps in its skill
 
 **Produce**:
 - `ai-driven-development/development/mobile_development/cross-platform/cross_platform_development_todo.md`
@@ -624,13 +624,13 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ## Phase 5: Comparison & Gap Analysis
-**Agent**: [`compare-legacy-to-new`](./compare-legacy-to-new.agent.md)
+**Agent**: [`nexia-compare-legacy-to-new`](./compare-legacy-to-new.agent.md)
 **Role**: Senior Master Architect / Analyst / Developer
 
 **Requires**: At least one in-scope Phase 4 implementation phase complete (`4b`, `4c`, `4d`, `4e`, or `4i`), or all in-scope implementation phases complete
 
 **Execute**:
-> Invoke the `compare-legacy-to-new` agent — it will follow all steps in its skill
+> Invoke the `nexia-compare-legacy-to-new` agent — it will follow all steps in its skill
 
 **Produce**:
 - `ai-driven-development/docs/legacy_vs_new_system/compare_legacy_to_new_system.md`
@@ -647,15 +647,15 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 ---
 
 ## Phase 6: Final Validation & Cutover Readiness
-**Agent**: [`final-validation`](./final-validation.agent.md)
+**Agent**: [`nexia-final-validation`](./final-validation.agent.md)
 **Role**: Senior Release Manager — release readiness, rollback readiness, stakeholder sign-off, go/no-go decision.
 
 **Requires**: Phase 5 complete plus all in-scope Phase 4 artifacts ready for release validation
 
 **Execute**:
-> Invoke the `final-validation` agent — it will follow all release-readiness, smoke-test, rollback, and go/no-go steps in its skill
+> Invoke the `nexia-final-validation` agent — it will follow all release-readiness, smoke-test, rollback, and go/no-go steps in its skill
 
-> The `final-validation` agent reads `.github/skills/final-validation/SKILL.md` in full before starting. All DoD items must be ✅ before production cutover.
+> The `nexia-final-validation` agent reads `.github/skills/nexia-final-validation/SKILL.md` in full before starting. All DoD items must be ✅ before production cutover.
 
 **Summary checklist** (full detail in skill):
 
@@ -761,7 +761,7 @@ ai-driven-development/
 ## Quick Start Prompt
 When invoking this agent, use:
 
-> "I want to start a full legacy modernization for [project name]. The legacy system is located at [path]. Use the `legacy-modernization-orchestrator` agent to begin Phase 1."
+> "I want to start a full legacy modernization for [project name]. The legacy system is located at [path]. Use the `nexia-orchestrator` agent to begin Phase 1."
 
 The orchestrator will:
 1. Load this agent

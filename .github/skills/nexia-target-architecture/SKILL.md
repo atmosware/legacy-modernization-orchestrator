@@ -1,5 +1,5 @@
 ---
-name: target-architecture
+name: nexia-target-architecture
 description: 'Target system architecture design skill for legacy modernization. Act as a senior master architect. Use when: designing new modern system architecture, creating target state architecture, applying clean architecture hexagonal DDD microservices patterns, defining service boundaries bounded contexts API-first design, producing mermaid architecture diagrams in HTML, tech stack user-selected: Java/.NET/Python/Go backend, React/Vue/Angular/Svelte frontend, Kotlin mobile.'
 argument-hint: 'Project name or path to legacy analysis and legacy design artifacts'
 version: 1.0.0
@@ -237,7 +237,7 @@ Produce an ADR for each major decision **applicable to the confirmed scope**:
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §1 — Architecture Decision Trees and §3 — Phase 3 quality gates.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §1 — Architecture Decision Trees and §3 — Phase 3 quality gates.
 
 > ✅ = required for all scopes · *(backend)* = required only if backend is in scope · *(frontend)* = web frontend only · *(mobile)* = native iOS, native Android, or cross-platform mobile as applicable
 
@@ -295,6 +295,6 @@ Produce an ADR for each major decision **applicable to the confirmed scope**:
 ## Next Skill
 When target architecture is finalized, proceed based on confirmed scope:
 
-- **If any UI is in scope** (web, iOS, or Android): proceed to [`ui-ux-design`](../ui-ux-design/SKILL.md) for UX design.
-- **If backend only**: proceed directly to [`backend-development`](../backend-development/SKILL.md). Skip ui-ux-design.
-- **Parallel tracks**: once scope is confirmed, [`backend-development`](../backend-development/SKILL.md) and [`frontend-development`](../frontend-development/SKILL.md) / [`ios-development`](../ios-development/SKILL.md) / [`android-development`](../android-development/SKILL.md) can run in parallel (frontend/mobile require ui-ux-design to complete first).
+- **If any UI is in scope** (web, iOS, or Android): proceed to [`ui-ux-design`](../nexia-ui-ux-design/SKILL.md) for UX design.
+- **If backend only**: proceed directly to [`backend-development`](../nexia-backend-development/SKILL.md). Skip ui-ux-design.
+- **Parallel tracks**: once scope is confirmed, [`backend-development`](../nexia-backend-development/SKILL.md) and [`frontend-development`](../nexia-frontend-development/SKILL.md) / [`ios-development`](../nexia-ios-development/SKILL.md) / [`android-development`](../nexia-android-development/SKILL.md) can run in parallel (frontend/mobile require ui-ux-design to complete first).

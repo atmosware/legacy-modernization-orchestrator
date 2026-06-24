@@ -1,5 +1,5 @@
 ---
-name: compare-legacy-to-new
+name: nexia-compare-legacy-to-new
 description: 'Legacy vs new system comparison and gap analysis skill. Act as a senior master architect analyst developer. Use when: comparing legacy system with redesigned system, gap analysis between legacy and new, mapping legacy components to new equivalents, creating migration strategy, producing before-after diagrams in HTML mermaid, validating that all legacy functionality is covered in new design, identifying improvements and regressions.'
 argument-hint: 'Path to legacy analysis and new system design artifacts to compare'
 version: 1.0.0
@@ -333,7 +333,7 @@ Before production migration, all items must be checked:
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 5 quality gates.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 5 quality gates.
 
 ### Performance
 - [ ] Legacy performance baseline documented (P50/P95/P99 latency, throughput, batch duration)
@@ -366,4 +366,4 @@ Before production migration, all items must be checked:
 ---
 
 ## Next Step
-Final step: return to the [`legacy-modernization-orchestrator`](../../agents/legacy-modernization-orchestrator.agent.md) for Phase 6 final validation and cutover readiness.
+Final step: return to the [`nexia-orchestrator`](../../agents/nexia-orchestrator.agent.md) for Phase 6 final validation and cutover readiness.

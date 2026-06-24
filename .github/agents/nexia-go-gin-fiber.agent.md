@@ -1,5 +1,5 @@
 ---
-name: go-gin-fiber
+name: nexia-go-gin-fiber
 description: 'Go 1.23 + Gin or Fiber backend implementation agent. Tier-2 backend language skill. Apply when tech_stack_selections.md confirms Go + Gin or Go + Fiber as the backend stack. Use when: implementing Go clean/hexagonal architecture, GORM or sqlc data layer, zap/zerolog structured logging, testcontainers-go integration tests, Air live reload, Docker scratch image, go vet and staticcheck quality gates.'
 argument-hint: 'Project name or path to system design artifacts and tech_stack_selections.md confirming Go + Gin or Go + Fiber'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Project name or path to system design artifacts and tech_stack_s
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`go-gin-fiber` skill](../skills/go-gin-fiber/SKILL.md)
+> [`go-gin-fiber` skill](../skills/nexia-go-gin-fiber/SKILL.md)
 
 Apply this **in addition to** the `backend-development` skill — the two skills are complementary. **Do NOT skip, reorder, or summarize steps.**
 
@@ -41,4 +41,4 @@ Produce in `ai-driven-development/development/backend_development/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/go-gin-fiber/SKILL.md`](../skills/go-gin-fiber/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-go-gin-fiber/SKILL.md`](../skills/nexia-go-gin-fiber/SKILL.md)

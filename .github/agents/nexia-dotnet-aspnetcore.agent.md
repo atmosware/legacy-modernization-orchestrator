@@ -1,5 +1,5 @@
 ---
-name: dotnet-aspnetcore
+name: nexia-dotnet-aspnetcore
 description: '.NET 9 + ASP.NET Core backend implementation agent. Tier-2 backend language skill. Apply when tech_stack_selections.md confirms .NET + ASP.NET Core as the backend stack. Use when: implementing ASP.NET Core clean/hexagonal architecture, EF Core repositories, Serilog structured logging, xUnit unit tests, Testcontainers.NET integration tests, MSBuild project structure, multi-stage Dockerfile.'
 argument-hint: 'Project name or path to system design artifacts and tech_stack_selections.md confirming .NET + ASP.NET Core'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Project name or path to system design artifacts and tech_stack_s
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`dotnet-aspnetcore` skill](../skills/dotnet-aspnetcore/SKILL.md)
+> [`dotnet-aspnetcore` skill](../skills/nexia-dotnet-aspnetcore/SKILL.md)
 
 Apply this **in addition to** the `backend-development` skill — the two skills are complementary. **Do NOT skip, reorder, or summarize steps.**
 
@@ -41,4 +41,4 @@ Produce in `ai-driven-development/development/backend_development/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/dotnet-aspnetcore/SKILL.md`](../skills/dotnet-aspnetcore/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-dotnet-aspnetcore/SKILL.md`](../skills/nexia-dotnet-aspnetcore/SKILL.md)

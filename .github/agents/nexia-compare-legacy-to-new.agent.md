@@ -1,5 +1,5 @@
 ---
-name: compare-legacy-to-new
+name: nexia-compare-legacy-to-new
 description: 'Legacy vs new system comparison and gap analysis agent. Act as a senior expert architect analyst developer. Use when: comparing legacy system with redesigned system, gap analysis between legacy and new, mapping legacy components to new equivalents, creating migration strategy, producing before-after diagrams in HTML mermaid, validating that all legacy functionality is covered in new design, identifying improvements and regressions.'
 argument-hint: 'Path to legacy analysis and new system design artifacts to compare'
 ---
@@ -20,7 +20,7 @@ argument-hint: 'Path to legacy analysis and new system design artifacts to compa
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`compare-legacy-to-new` skill](../skills/compare-legacy-to-new/SKILL.md)
+> [`compare-legacy-to-new` skill](../skills/nexia-compare-legacy-to-new/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** Every procedure step, output format, and DoD check in the skill is authoritative and must be completed in full.
 
@@ -48,9 +48,9 @@ Produce in `ai-driven-development/docs/legacy_vs_new_system/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/compare-legacy-to-new/SKILL.md`](../skills/compare-legacy-to-new/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-compare-legacy-to-new/SKILL.md`](../skills/nexia-compare-legacy-to-new/SKILL.md)
 
 ---
 
 ## Next Agent
-Final step: return to the [`legacy-modernization-orchestrator`](./legacy-modernization-orchestrator.agent.md) for Phase 6 final validation and cutover readiness.
+Final step: return to the [`nexia-orchestrator`](./nexia-orchestrator.agent.md) for Phase 6 final validation and cutover readiness.

@@ -1,5 +1,5 @@
 ---
-name: android-development
+name: nexia-android-development
 description: 'Android mobile development skill for legacy modernization. Act as a senior expert Android developer. Use when: building Kotlin Jetpack Compose Android mobile app, implementing MVVM Clean Architecture, Kotlin Coroutines Flow, EncryptedSharedPreferences Keystore token storage, Retrofit OkHttp networking, Room local persistence, push notifications FCM, deep linking, unit testing JUnit Mockk Turbine, UI testing Espresso Compose, Play Store deployment, phased Android development plan.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 version: 1.0.0
@@ -583,7 +583,7 @@ Implement Android platform extension features for the project. Skip any item not
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 4e quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 4e quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
 
 ### Code Quality
 - [ ] Detekt and Ktlint zero violations
@@ -621,4 +621,4 @@ Implement Android platform extension features for the project. Skip any item not
 ---
 
 ## Next Skill
-When Android app is production-ready, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) to validate functional equivalence.
+When Android app is production-ready, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) to validate functional equivalence.

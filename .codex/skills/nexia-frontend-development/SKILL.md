@@ -1,10 +1,10 @@
 ---
-name: frontend-development
+name: nexia-frontend-development
 description: "Frontend development skill for legacy modernization. Act as a senior expert frontend developer. Use when: building React / Vue / Angular / Svelte TypeScript frontend, implementing design system components, state management TanStack Query Zustand Pinia NgRx, API integration Axios, code splitting lazy loading performance optimization, Vitest Playwright testing, phased frontend development plan. For mobile clients use ios-development or android-development skills instead."
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 ---
 
-# frontend-development
+# nexia-frontend-development
 
 ## Role
 Senior Expert Frontend Developer — React 18 TypeScript frontend. Design system components, Redux Toolkit / Zustand / TanStack Query, Axios, Jest/Cypress/Playwright.
@@ -13,4 +13,4 @@ Senior Expert Frontend Developer — React 18 TypeScript frontend. Design system
 Project name or path to UI/UX design artifacts and system design to implement.
 
 ## Instructions
-Read `.github/skills/frontend-development/SKILL.md` in full before taking any action. Follow every step exactly — no skipping, reordering, or summarizing. Validate the Definition of Done checklist before completing.
+Read `.github/skills/nexia-frontend-development/SKILL.md` in full before taking any action. Follow every step exactly — no skipping, reordering, or summarizing. Validate the Definition of Done checklist before completing.

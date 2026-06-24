@@ -1,5 +1,5 @@
 ---
-name: data-migration
+name: nexia-data-migration
 description: 'Data migration skill for legacy modernization. Optional Phase 4f. Use when: migrating data from legacy to new schema, writing Flyway/Liquibase/Alembic/Goose schema migration scripts, implementing dual-write reconciliation, validating row counts and checksums, performing large-table chunking, repairing referential integrity, running legacy data cleansing pipelines, executing post-migration data quality audits, producing cutover freeze SQL and rollback procedures.'
 argument-hint: 'Path to legacy analysis and target architecture artifacts, plus database connection details'
 version: 1.0.0
@@ -547,7 +547,7 @@ Audit checklist:
 
 ## Definition of Done
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §4 — Cross-Cutting Concerns checklist and §6 — Dependency Management Rules.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §4 — Cross-Cutting Concerns checklist and §6 — Dependency Management Rules.
 
 - [ ] Schema mapping table covers 100% of legacy tables (including decisions to archive/drop)
 - [ ] Data cleansing scripts documented and reviewed

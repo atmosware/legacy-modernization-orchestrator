@@ -1,5 +1,5 @@
 ---
-name: devops-infra
+name: nexia-devops-infra
 description: 'DevOps and infrastructure-as-code skill for legacy modernization. Optional Phase 4h. Act as a senior DevOps platform engineer. Use when: producing Kubernetes manifests, Helm charts, Terraform/Pulumi cloud infrastructure modules, GitHub Actions / GitLab CI pipelines, Prometheus alerting rules, Grafana dashboards, secret management with HashiCorp Vault or External Secrets Operator, Docker image security, container registry setup, environment configuration.'
 argument-hint: 'Project name or path to target architecture and backend development artifacts'
 version: 1.0.0
@@ -568,7 +568,7 @@ spec:
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §4 — Cross-Cutting Concerns checklist (Reliability, Observability, Operability) and §6 — Dependency Management Rules.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §4 — Cross-Cutting Concerns checklist (Reliability, Observability, Operability) and §6 — Dependency Management Rules.
 
 - [ ] `infra_todo.md` created with all in-scope components listed
 - [ ] All K8s/Helm manifests pass `kubectl --dry-run=client` or `helm lint`
@@ -585,4 +585,4 @@ spec:
 ---
 
 ## Next Skill
-Proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) (Phase 5) after all Phase 4 development is complete, or coordinate with other Phase 4 sub-agents that may still be in progress.
+Proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) (Phase 5) after all Phase 4 development is complete, or coordinate with other Phase 4 sub-agents that may still be in progress.

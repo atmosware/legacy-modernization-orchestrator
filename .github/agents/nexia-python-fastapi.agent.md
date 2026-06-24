@@ -1,5 +1,5 @@
 ---
-name: python-fastapi
+name: nexia-python-fastapi
 description: 'Python 3.12 + FastAPI backend implementation agent. Tier-2 backend language skill. Apply when tech_stack_selections.md confirms Python + FastAPI as the backend stack. Use when: implementing FastAPI clean/hexagonal architecture, SQLAlchemy 2 async repositories, Alembic migrations, Pydantic v2 schemas, pytest-asyncio tests, Testcontainers integration tests, structlog logging, pyproject.toml project setup, multi-stage Dockerfile.'
 argument-hint: 'Project name or path to system design artifacts and tech_stack_selections.md confirming Python + FastAPI'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Project name or path to system design artifacts and tech_stack_s
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`python-fastapi` skill](../skills/python-fastapi/SKILL.md)
+> [`python-fastapi` skill](../skills/nexia-python-fastapi/SKILL.md)
 
 Apply this **in addition to** the `backend-development` skill — the two skills are complementary. **Do NOT skip, reorder, or summarize steps.**
 
@@ -41,4 +41,4 @@ Produce in `ai-driven-development/development/backend_development/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/python-fastapi/SKILL.md`](../skills/python-fastapi/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-python-fastapi/SKILL.md`](../skills/nexia-python-fastapi/SKILL.md)

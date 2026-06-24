@@ -1,5 +1,5 @@
 ---
-name: tech-stack-selection
+name: nexia-tech-stack-selection
 description: 'Tech stack selection gate agent for legacy modernization. Act as an orchestrator for Phase 2.5. Use when: collecting all flexible technology choices after Phase 2, confirming backend language, frontend framework, database, mobile delivery model, cloud provider, secret management, deployment platform, and observability stack, then writing them to tech_stack_selections.md for all downstream phases.'
 argument-hint: 'Project name (legacy architecture artifacts are read automatically from ai-driven-development/docs/)'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Project name (legacy architecture artifacts are read automatical
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`tech-stack-selection` skill](../skills/tech-stack-selection/SKILL.md)
+> [`tech-stack-selection` skill](../skills/nexia-tech-stack-selection/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** The full questionnaire, default behavior, custom-value handling, schema rules, and DoD checks in the skill are authoritative.
 
@@ -39,4 +39,4 @@ Produce:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/tech-stack-selection/SKILL.md`](../skills/tech-stack-selection/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-tech-stack-selection/SKILL.md`](../skills/nexia-tech-stack-selection/SKILL.md)

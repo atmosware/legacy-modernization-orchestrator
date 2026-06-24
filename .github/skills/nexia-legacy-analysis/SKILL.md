@@ -1,5 +1,5 @@
 ---
-name: legacy-analysis
+name: nexia-legacy-analysis
 description: 'Legacy system analysis skill. Act as a senior expert technical analyst. Use when: analysing legacy codebase, reverse engineering legacy architecture, identifying technical debt, mapping business flows, detecting hidden dependencies, assessing security posture, database schema reverse engineering, stored procedures and triggers inventory, table ownership matrix, data quality assessment, creating legacy architecture reports, risk matrix, data and integration maps before modernization.'
 argument-hint: 'Path or description of the legacy project to analyze'
 version: 1.0.0
@@ -54,7 +54,7 @@ Classify the repository as one of:
 
 Record the profile in `legacy_analysis.md` **Section 10 — Technology Profile** (see Output Format).
 
-> ⚠️ This profile is consumed by the `target-architecture` and `legacy-modernization-orchestrator` agents to skip inapplicable layers. It must be accurate — if ambiguous, list evidence for and against each tier.
+> ⚠️ This profile is consumed by the `target-architecture` and `nexia-orchestrator` agents to skip inapplicable layers. It must be accurate — if ambiguous, list evidence for and against each tier.
 
 ---
 
@@ -300,7 +300,7 @@ Score each risk by **Impact (1-5) × Likelihood (1-5)**:
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 1 quality gates.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 1 quality gates.
 
 ### Technology Profile
 - [ ] Technology Profile (Section 10) produced before any other analysis step
@@ -347,4 +347,4 @@ Score each risk by **Impact (1-5) × Likelihood (1-5)**:
 ---
 
 ## Next Skill
-When this analysis is complete, proceed to [`legacy-architecture`](../legacy-architecture/SKILL.md) to visualize the architecture.
+When this analysis is complete, proceed to [`legacy-architecture`](../nexia-legacy-architecture/SKILL.md) to visualize the architecture.

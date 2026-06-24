@@ -1,5 +1,5 @@
 ---
-name: legacy-architecture
+name: nexia-legacy-architecture
 description: 'Legacy system architecture visualization and design agent. Act as a senior expert architect. Use when: visualizing legacy architecture, creating system diagrams for legacy systems, understanding legacy component relationships, mapping legacy data flows, identifying architectural weaknesses, producing mermaid diagrams in HTML format, documenting legacy architectural constraints before redesign.'
 argument-hint: 'Legacy system name or path to analysis report to base diagrams from'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Legacy system name or path to analysis report to base diagrams f
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`legacy-architecture` skill](../skills/legacy-architecture/SKILL.md)
+> [`legacy-architecture` skill](../skills/nexia-legacy-architecture/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** Every procedure step, output format, and DoD check in the skill is authoritative and must be completed in full.
 
@@ -39,7 +39,7 @@ Produce in `ai-driven-development/docs/legacy_architecture/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/legacy-architecture/SKILL.md`](../skills/legacy-architecture/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-legacy-architecture/SKILL.md`](../skills/nexia-legacy-architecture/SKILL.md)
 
 ---
 

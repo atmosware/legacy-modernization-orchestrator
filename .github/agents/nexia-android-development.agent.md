@@ -1,5 +1,5 @@
 ---
-name: android-development
+name: nexia-android-development
 description: 'Android mobile development agent for legacy modernization. Act as a senior expert Android developer. Use when: building Kotlin Jetpack Compose Android mobile app, implementing MVVM Clean Architecture, Kotlin Coroutines Flow, EncryptedSharedPreferences Keystore token storage, Retrofit OkHttp networking, Room local persistence, push notifications FCM, deep linking, unit testing JUnit Mockk Turbine, UI testing Espresso Compose, Play Store deployment, phased Android development plan.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 ---
@@ -14,14 +14,14 @@ argument-hint: 'Project name or path to UI/UX design artifacts and system design
 - After `target-architecture` agent confirms API contracts
 - Starting or continuing phased Android mobile implementation
 
-> **Parallelism:** 4e requires 4a complete. Can then run in parallel with 4b, 4c, 4d, 4f, 4h. See the [Phase 4 Parallelism Matrix](./legacy-modernization-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
+> **Parallelism:** 4e requires 4a complete. Can then run in parallel with 4b, 4c, 4d, 4f, 4h. See the [Phase 4 Parallelism Matrix](./nexia-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
 
 ---
 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`android-development` skill](../skills/android-development/SKILL.md)
+> [`android-development` skill](../skills/nexia-android-development/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** All 12 development phases, output formats, and DoD checks in the skill are authoritative and must be completed in full.
 
@@ -48,7 +48,7 @@ Produce in `ai-driven-development/development/mobile_development/android/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/android-development/SKILL.md`](../skills/android-development/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-android-development/SKILL.md`](../skills/nexia-android-development/SKILL.md)
 
 ---
 

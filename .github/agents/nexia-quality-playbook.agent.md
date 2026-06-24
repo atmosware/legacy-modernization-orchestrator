@@ -1,5 +1,5 @@
 ---
-name: quality-playbook
+name: nexia-quality-playbook
 description: 'Cross-cutting quality reference agent for all phases of legacy modernization. Advisory only — produces no standalone output artifact. Use when: evaluating architecture decisions (monolith vs microservices, DB strategy), selecting design patterns, reviewing testing strategy, applying code quality standards, evaluating API design options. Consult at any phase without disrupting the phase sequence.'
 argument-hint: 'Phase name or quality concern to evaluate (e.g., "monolith vs microservices decision for Phase 3")'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Phase name or quality concern to evaluate (e.g., "monolith vs mi
 ## Skill Reference
 Consult the full decision trees and quality criteria defined in:
 
-> [`quality-playbook` skill](../skills/quality-playbook/SKILL.md)
+> [`quality-playbook` skill](../skills/nexia-quality-playbook/SKILL.md)
 
 **Advisory use** — findings are embedded as inline ADRs or notes in the calling phase's output document. This agent does not produce a standalone output file.
 

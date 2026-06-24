@@ -1,5 +1,5 @@
 ---
-name: target-architecture
+name: nexia-target-architecture
 description: 'Target system architecture design agent for legacy modernization. Act as a senior expert architect. Use when: designing new modern system architecture, creating target state architecture, applying clean architecture hexagonal DDD microservices patterns, defining service boundaries bounded contexts API-first design, producing mermaid architecture diagrams in HTML, tech stack user-selected: Java/.NET/Python/Go backend, React/Vue/Angular/Svelte frontend, Kotlin mobile.'
 argument-hint: 'Project name or path to legacy analysis and legacy design artifacts'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Project name or path to legacy analysis and legacy design artifa
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`target-architecture` skill](../skills/target-architecture/SKILL.md)
+> [`target-architecture` skill](../skills/nexia-target-architecture/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** Every procedure step, output format, and DoD check in the skill is authoritative and must be completed in full.
 
@@ -45,7 +45,7 @@ Produce in `ai-driven-development/docs/target_architecture/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/target-architecture/SKILL.md`](../skills/target-architecture/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-target-architecture/SKILL.md`](../skills/nexia-target-architecture/SKILL.md)
 
 ---
 

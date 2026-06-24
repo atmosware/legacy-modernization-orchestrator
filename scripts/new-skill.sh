@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# new-skill.sh — Scaffold a new skill for the legacy-modernization-orchestrator framework
+# new-skill.sh — Scaffold a new skill for the nexia-orchestrator framework
 #
 # Usage:
 #   bash scripts/new-skill.sh <skill-name>

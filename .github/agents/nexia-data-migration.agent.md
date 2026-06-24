@@ -1,5 +1,5 @@
 ---
-name: data-migration
+name: nexia-data-migration
 description: 'Data migration agent for legacy modernization. Act as a senior data migration engineer. Use when: migrating data from legacy to new schema, writing Flyway/Liquibase/Alembic/Goose schema migration scripts, implementing dual-write reconciliation, validating row counts and checksums, performing large-table chunking, repairing referential integrity, running legacy data cleansing pipelines, executing post-migration data quality audits, producing cutover freeze SQL and rollback procedures.'
 argument-hint: 'Path to legacy analysis and target architecture artifacts, plus database connection details'
 ---
@@ -15,14 +15,14 @@ argument-hint: 'Path to legacy analysis and target architecture artifacts, plus 
 - Dual-write reconciliation period needed before cutover
 - Post-migration data quality audit required before go-live
 
-> **Parallelism:** 4f can start as soon as Phase 3 is complete (target schema known). Safe to run in parallel with 4b, 4c, 4d, 4e, 4i, 4h. See the [Phase 4 Parallelism Matrix](./legacy-modernization-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
+> **Parallelism:** 4f can start as soon as Phase 3 is complete (target schema known). Safe to run in parallel with 4b, 4c, 4d, 4e, 4i, 4h. See the [Phase 4 Parallelism Matrix](./nexia-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
 
 ---
 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`data-migration` skill](../skills/data-migration/SKILL.md)
+> [`data-migration` skill](../skills/nexia-data-migration/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** Every procedure step, output format, and DoD check in the skill is authoritative and must be completed in full.
 
@@ -47,4 +47,4 @@ Produce in `ai-driven-development/development/data_migration/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/data-migration/SKILL.md`](../skills/data-migration/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-data-migration/SKILL.md`](../skills/nexia-data-migration/SKILL.md)

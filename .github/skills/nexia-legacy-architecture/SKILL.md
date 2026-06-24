@@ -1,5 +1,5 @@
 ---
-name: legacy-architecture
+name: nexia-legacy-architecture
 description: 'Legacy system architecture visualization and design skill. Act as a senior master architect. Use when: visualizing legacy architecture, creating system diagrams for legacy systems, understanding legacy component relationships, mapping legacy data flows, identifying architectural weaknesses, producing mermaid diagrams in HTML format, documenting legacy architectural constraints before redesign.'
 argument-hint: 'Legacy system name or path to analysis report to base diagrams from'
 version: 1.0.0
@@ -211,7 +211,7 @@ Full Mermaid.js HTML file containing all diagrams from Step 4 above, customized 
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 2 quality gates.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 2 quality gates.
 
 ### Diagrams
 - [ ] High-level architecture diagram (system boundary clearly shown)
@@ -241,4 +241,4 @@ Full Mermaid.js HTML file containing all diagrams from Step 4 above, customized 
 ---
 
 ## Next Skill
-When legacy architecture is fully visualized, proceed to [`target-architecture`](../target-architecture/SKILL.md) to design the target architecture.
+When legacy architecture is fully visualized, proceed to [`target-architecture`](../nexia-target-architecture/SKILL.md) to design the target architecture.

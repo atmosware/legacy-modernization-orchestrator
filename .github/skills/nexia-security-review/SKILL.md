@@ -1,5 +1,5 @@
 ---
-name: security-review
+name: nexia-security-review
 description: 'Security review skill for legacy modernization target system. Optional Phase 4g. Use when: performing OWASP Top 10 checks per layer, detecting hardcoded secrets and credentials, scanning dependency CVEs with OWASP Dependency-Check or Trivy, auditing API authorization coverage, reviewing JWT validation algorithm and rotation, auditing CORS and CSP configuration, verifying Docker image security (non-root, distroless, no leaked secrets), producing a security findings report before go-live.'
 argument-hint: 'Project name or path to target architecture and development artifacts to review'
 version: 1.0.0
@@ -341,7 +341,7 @@ Checklist:
 
 ## Definition of Done
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §2.5 — Hardcoded Configuration, §2.8 — Logging Sensitive Data, and §4 — Cross-Cutting Concerns Security checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §2.5 — Hardcoded Configuration, §2.8 — Logging Sensitive Data, and §4 — Cross-Cutting Concerns Security checklist.
 
 - [ ] Threat model (STRIDE) completed for all trust boundaries; all Critical and High risks have mitigating controls; threat model signed off
 - [ ] All OWASP Top 10 categories audited for every in-scope layer

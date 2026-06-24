@@ -1,5 +1,5 @@
 ---
-name: backend-development
+name: nexia-backend-development
 description: 'Backend development skill for legacy modernization. Act as a senior master backend developer. Use when: building Java Spring Boot / .NET ASP.NET Core / Python FastAPI / Go Gin-Fiber backend, implementing clean architecture hexagonal architecture, setting up domain-driven design modules, implementing REST APIs OpenAPI security JWT OAuth2, database ORM repositories, testing unit integration Testcontainers, observability metrics tracing logging, phased development plan backend implementation.'
 argument-hint: 'Project name or path to system design artifacts to base backend implementation on'
 version: 1.0.0
@@ -74,15 +74,15 @@ Create folders:
 
 > See [STANDARDS.md](./STANDARDS.md) for language-agnostic architecture rules, the error response format, and the phase tracker template.
 
-> **Java + Spring Boot**: For Java-specific standards (Maven folder structure, Lombok, Spring annotations, Docker template), see [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md). For Java-specific implementation steps (pom.xml setup, Spring Security config, Logback, Testcontainers), see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md).
+> **Java + Spring Boot**: For Java-specific standards (Maven folder structure, Lombok, Spring annotations, Docker template), see [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md). For Java-specific implementation steps (pom.xml setup, Spring Security config, Logback, Testcontainers), see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md).
 
-> **.NET 9 + ASP.NET Core**: For .NET-specific standards (solution structure, EF Core conventions, Docker template), see [`../dotnet-aspnetcore/STANDARDS.md`](../dotnet-aspnetcore/STANDARDS.md). For .NET-specific implementation steps (NuGet packages, MediatR CQRS, Serilog, xUnit, Testcontainers.NET), see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md).
+> **.NET 9 + ASP.NET Core**: For .NET-specific standards (solution structure, EF Core conventions, Docker template), see [`../nexia-dotnet-aspnetcore/STANDARDS.md`](../nexia-dotnet-aspnetcore/STANDARDS.md). For .NET-specific implementation steps (NuGet packages, MediatR CQRS, Serilog, xUnit, Testcontainers.NET), see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md).
 
-> **Python 3.12 + FastAPI**: For Python-specific standards (src layout, Alembic conventions, Docker template), see [`../python-fastapi/STANDARDS.md`](../python-fastapi/STANDARDS.md). For Python-specific implementation steps (pyproject.toml, SQLAlchemy 2 async, pytest-asyncio, structlog), see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md).
+> **Python 3.12 + FastAPI**: For Python-specific standards (src layout, Alembic conventions, Docker template), see [`../nexia-python-fastapi/STANDARDS.md`](../nexia-python-fastapi/STANDARDS.md). For Python-specific implementation steps (pyproject.toml, SQLAlchemy 2 async, pytest-asyncio, structlog), see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md).
 
-> **Go 1.23 + Gin / Fiber**: For Go-specific standards (project layout, golangci-lint, Docker scratch image), see [`../go-gin-fiber/STANDARDS.md`](../go-gin-fiber/STANDARDS.md). For Go-specific implementation steps (go.mod, GORM/sqlc, zap, testcontainers-go, govulncheck), see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md).
+> **Go 1.23 + Gin / Fiber**: For Go-specific standards (project layout, golangci-lint, Docker scratch image), see [`../nexia-go-gin-fiber/STANDARDS.md`](../nexia-go-gin-fiber/STANDARDS.md). For Go-specific implementation steps (go.mod, GORM/sqlc, zap, testcontainers-go, govulncheck), see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md).
 
-> **Language adaptation**: The procedure below applies to all stacks. When the confirmed stack is Java + Spring Boot, follow the Java-specific steps in [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) alongside this procedure. For .NET, use [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md). For Python, use [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md). For Go, use [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md). Same architectural patterns (Clean Architecture, layered structure, REST + OpenAPI, JWT auth, observability), different tools.
+> **Language adaptation**: The procedure below applies to all stacks. When the confirmed stack is Java + Spring Boot, follow the Java-specific steps in [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) alongside this procedure. For .NET, use [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md). For Python, use [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md). For Go, use [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md). Same architectural patterns (Clean Architecture, layered structure, REST + OpenAPI, JWT auth, observability), different tools.
 
 ---
 
@@ -135,13 +135,13 @@ Record the decomposition plan (bounded context list → sub-task assignment) in 
 ### Phase 1 — Project Setup & Core Foundation
 **Goal**: Bootstrap a working, runnable project with all tooling in place.
 
-1. **Project structure**: Use the folder structure from the stack-specific standards file — [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md) (Java), [`../dotnet-aspnetcore/STANDARDS.md`](../dotnet-aspnetcore/STANDARDS.md) (.NET), [`../python-fastapi/STANDARDS.md`](../python-fastapi/STANDARDS.md) (Python), [`../go-gin-fiber/STANDARDS.md`](../go-gin-fiber/STANDARDS.md) (Go).
+1. **Project structure**: Use the folder structure from the stack-specific standards file — [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md) (Java), [`../nexia-dotnet-aspnetcore/STANDARDS.md`](../nexia-dotnet-aspnetcore/STANDARDS.md) (.NET), [`../nexia-python-fastapi/STANDARDS.md`](../nexia-python-fastapi/STANDARDS.md) (Python), [`../nexia-go-gin-fiber/STANDARDS.md`](../nexia-go-gin-fiber/STANDARDS.md) (Go).
 
 2. **Build file** (`pom.xml` / `*.csproj` / `pyproject.toml` / `go.mod`) with:
    - Framework parent / version pinning
    - Required dependencies (web, security, ORM, validation, health checks, API docs)
    - Profiles / environments: `dev`, `test`, `prod`
-   - Java: see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) § Phase 1 · .NET: see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md) § Phase 1 · Python: see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md) § Phase 1 · Go: see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md) § Phase 1.
+   - Java: see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) § Phase 1 · .NET: see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md) § Phase 1 · Python: see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md) § Phase 1 · Go: see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md) § Phase 1.
 
 3. **Application configuration files**:
    - `application.yml` — common config
@@ -202,7 +202,7 @@ For each bounded context identified in system design:
 - DTOs with validation (Jakarta Validation / FluentValidation / Pydantic / struct tags per stack)
 - Mappers (MapStruct / AutoMapper / dataclasses / struct mapping per stack)
 - Transaction boundaries at service layer
-- Java: see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) § Phase 5 · .NET: see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md) § Phase 5 · Python: see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md) § Phase 5 · Go: see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md) § Phase 5.
+- Java: see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) § Phase 5 · .NET: see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md) § Phase 5 · Python: see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md) § Phase 5 · Go: see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md) § Phase 5.
 
 **Infrastructure Layer**:
 - ORM repository implementations
@@ -240,7 +240,7 @@ For each bounded context identified in system design:
 
 **Authorization**: enforce at method/handler level — never inline role checks in business logic.
 
-> Language-specific security config — Java: see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) § Phase 7 · .NET: see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md) § Phase 7 · Python: see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md) § Phase 7 · Go: see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md) § Phase 7.
+> Language-specific security config — Java: see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) § Phase 7 · .NET: see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md) § Phase 7 · Python: see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md) § Phase 7 · Go: see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md) § Phase 7.
 
 ### Phase 8 — Review Phase 7
 - [ ] All endpoints documented in Swagger UI
@@ -275,7 +275,7 @@ For each bounded context identified in system design:
 **Email Notifications**:
 - Use stack-appropriate mail client with templated email bodies
 
-> Language-specific integration patterns — Java: see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) § Phase 9 · .NET: see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md) § Phase 9 · Python: see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md) § Phase 9 · Go: see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md) § Phase 9.
+> Language-specific integration patterns — Java: see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) § Phase 9 · .NET: see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md) § Phase 9 · Python: see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md) § Phase 9 · Go: see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md) § Phase 9.
 
 ### Phase 10 — Review Phase 9
 - [ ] All integrations have circuit breakers or retry logic
@@ -304,15 +304,15 @@ For each bounded context identified in system design:
 **Docker**:
 - Non-root user — mandatory for security
 - Minimal base image (Alpine or distroless); pin exact version
-- See stack-specific Docker template: [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md) § Docker Image Template
+- See stack-specific Docker template: [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md) § Docker Image Template
 
 **Health Checks**:
 - Liveness and readiness endpoints. _(Java: `/actuator/health` + `/actuator/health/readiness`; .NET: `/healthz`/`/readyz`; Python/Go: `/health` — see Tier-2 skill for exact routes.)_
 - Custom health indicators for DB and messaging
 
-> Language-specific observability setup — Java: see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) § Phase 11 · .NET: see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md) § Phase 11 · Python: see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md) § Phase 11 · Go: see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md) § Phase 11.
+> Language-specific observability setup — Java: see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) § Phase 11 · .NET: see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md) § Phase 11 · Python: see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md) § Phase 11 · Go: see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md) § Phase 11.
 
-> **Infrastructure-as-Code**: For Kubernetes manifests, Helm charts, Terraform/Pulumi modules, Prometheus alerting rules, and Grafana dashboards, use the [`devops-infra`](../devops-infra/SKILL.md) skill (optional Phase 4h).
+> **Infrastructure-as-Code**: For Kubernetes manifests, Helm charts, Terraform/Pulumi modules, Prometheus alerting rules, and Grafana dashboards, use the [`devops-infra`](../nexia-devops-infra/SKILL.md) skill (optional Phase 4h).
 
 ---
 
@@ -338,7 +338,7 @@ For each bounded context identified in system design:
 - Run a dependency vulnerability scan (OWASP Dependency Check / `dotnet list package --vulnerable` / `pip-audit` / `govulncheck`)
 - No CVEs in critical/high severity from runtime dependencies
 
-> Language-specific quality gate tools — Java: see [`../java-springboot/SKILL.md`](../java-springboot/SKILL.md) § Phase 12 · .NET: see [`../dotnet-aspnetcore/SKILL.md`](../dotnet-aspnetcore/SKILL.md) § Phase 12 · Python: see [`../python-fastapi/SKILL.md`](../python-fastapi/SKILL.md) § Phase 12 · Go: see [`../go-gin-fiber/SKILL.md`](../go-gin-fiber/SKILL.md) § Phase 12.
+> Language-specific quality gate tools — Java: see [`../nexia-java-springboot/SKILL.md`](../nexia-java-springboot/SKILL.md) § Phase 12 · .NET: see [`../nexia-dotnet-aspnetcore/SKILL.md`](../nexia-dotnet-aspnetcore/SKILL.md) § Phase 12 · Python: see [`../nexia-python-fastapi/SKILL.md`](../nexia-python-fastapi/SKILL.md) § Phase 12 · Go: see [`../nexia-go-gin-fiber/SKILL.md`](../nexia-go-gin-fiber/SKILL.md) § Phase 12.
 
 ### Phase 13 — Final Review & Cleanup
 - [ ] All TODO comments resolved
@@ -352,7 +352,7 @@ For each bounded context identified in system design:
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §2 — Common Anti-Patterns, §3 — Phase 4b quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §2 — Common Anti-Patterns, §3 — Phase 4b quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
 
 ### Code Quality
 - [ ] Clean architecture layers enforced (no framework in domain)
@@ -391,4 +391,4 @@ For each bounded context identified in system design:
 ---
 
 ## Next Skill
-When backend is production-ready, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) to validate equivalence and improvements.
+When backend is production-ready, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) to validate equivalence and improvements.

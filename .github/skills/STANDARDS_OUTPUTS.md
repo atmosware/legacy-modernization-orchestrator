@@ -14,7 +14,7 @@ ai-driven-development/
 ├── docs/
 │   │
 │   ├── tech_stack_selections.md                      ← Phase 2.5 (always — filled from template)
-│   │   [Template: .github/skills/tech-stack-selection/tech_stack_selections.template.md]
+│   │   [Template: .github/skills/nexia-tech-stack-selection/tech_stack_selections.template.md]
 │   │
 │   ├── adr/                                          ← Architecture Decision Records (as needed)
 │   │   └── ADR-{NNN}-{title}.md                     ← One file per decision

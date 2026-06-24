@@ -1,5 +1,5 @@
 ---
-name: frontend-development
+name: nexia-frontend-development
 description: 'Frontend development skill for legacy modernization. Act as a senior expert frontend developer. Use when: building React / Vue / Angular / Svelte TypeScript frontend, implementing design system components, state management TanStack Query Zustand Pinia NgRx, API integration Axios, code splitting lazy loading performance optimization, Vitest Playwright testing, phased frontend development plan. For mobile clients use ios-development or android-development skills instead.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 version: 1.0.0
@@ -415,7 +415,7 @@ it('has no accessibility violations', async () => {
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 4c quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 4c quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
 
 ### Code Quality
 - [ ] TypeScript strict mode — zero errors, zero `any` types
@@ -450,7 +450,7 @@ it('has no accessibility violations', async () => {
 ---
 
 ## Related Skills
-- Mobile clients: use [`ios-development`](../ios-development/SKILL.md) for native iOS or [`android-development`](../android-development/SKILL.md) for native Android
+- Mobile clients: use [`ios-development`](../nexia-ios-development/SKILL.md) for native iOS or [`android-development`](../nexia-android-development/SKILL.md) for native Android
 
 ## Next Skill
-When frontend is production-ready, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) to validate functional equivalence.
+When frontend is production-ready, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) to validate functional equivalence.

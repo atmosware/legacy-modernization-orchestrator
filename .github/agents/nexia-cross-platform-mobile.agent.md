@@ -1,5 +1,5 @@
 ---
-name: cross-platform-mobile
+name: nexia-cross-platform-mobile
 description: 'Cross-platform mobile development agent for legacy modernization. Act as a senior expert mobile developer. Use when: building Flutter (Dart) or React Native (TypeScript) cross-platform app targeting iOS and Android from a single codebase, implementing MVVM/BLoC/Riverpod (Flutter) or Zustand/Redux Toolkit (React Native) state management, secure token storage, Dio/Axios networking, local persistence, FCM push notifications, deep linking, widget/component/E2E testing, App Store and Play Store deployment. NOT the default choice — use ios-development and/or android-development for native-first projects. Requires tech_stack_selections.md to confirm Flutter or React Native.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 ---
@@ -17,14 +17,14 @@ argument-hint: 'Project name or path to UI/UX design artifacts and system design
 
 > **Default mobile path is native.** Only use this agent when `tech_stack_selections.md` explicitly selects cross-platform. For native mobile, use [`ios-development`](./ios-development.agent.md) and/or [`android-development`](./android-development.agent.md) instead.
 
-> **Parallelism:** 4i requires 4a complete. Can then run in parallel with 4b, 4c, 4f, 4h. See the [Phase 4 Parallelism Matrix](./legacy-modernization-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
+> **Parallelism:** 4i requires 4a complete. Can then run in parallel with 4b, 4c, 4f, 4h. See the [Phase 4 Parallelism Matrix](./nexia-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
 
 ---
 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`cross-platform-mobile` skill](../skills/cross-platform-mobile/SKILL.md)
+> [`cross-platform-mobile` skill](../skills/nexia-cross-platform-mobile/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** All development phases, output formats, and DoD checks in the skill are authoritative and must be completed in full.
 
@@ -52,4 +52,4 @@ Produce in `ai-driven-development/development/mobile_development/cross-platform/
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/cross-platform-mobile/SKILL.md`](../skills/cross-platform-mobile/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-cross-platform-mobile/SKILL.md`](../skills/nexia-cross-platform-mobile/SKILL.md)

@@ -1,6 +1,6 @@
 ---
-name: agent-governance
-description: 'Framework governance reference for the legacy-modernization-orchestrator. Use when: selecting the correct agent to invoke, chaining agents in the right order, resuming an in-progress project, understanding phase ordering and DoD gates, choosing between full orchestration and standalone phase modes.'
+name: nexia-agent-governance
+description: 'Framework governance reference for the nexia-orchestrator. Use when: selecting the correct agent to invoke, chaining agents in the right order, resuming an in-progress project, understanding phase ordering and DoD gates, choosing between full orchestration and standalone phase modes.'
 argument-hint: 'Framework governance reference — no argument required'
 version: 1.0.0
 last_reviewed: 2026-04-27
@@ -12,14 +12,14 @@ status: Active
 ## Role
 **Framework Governance Reference**
 
-This document defines how to correctly select, invoke, and chain agents in the legacy-modernization-orchestrator framework. Read this when unsure which agent to invoke, how to run multiple agents, or how to resume a project in progress.
+This document defines how to correctly select, invoke, and chain agents in the nexia-orchestrator framework. Read this when unsure which agent to invoke, how to run multiple agents, or how to resume a project in progress.
 
 ---
 
 ## 1. Agent Invocation Modes
 
 ### Mode A — Full Orchestration (use for new or in-progress projects)
-Invoke `legacy-modernization-orchestrator` as the entry point. It executes all phases in order, validates DoD at each gate, and coordinates all sub-agents.
+Invoke `nexia-orchestrator` as the entry point. It executes all phases in order, validates DoD at each gate, and coordinates all sub-agents.
 
 **When to use**:
 - Starting a new legacy modernization project from scratch
@@ -27,7 +27,7 @@ Invoke `legacy-modernization-orchestrator` as the entry point. It executes all p
 - Running all phases end-to-end with automated sequencing
 
 **Command pattern**:
-> "Modernize the legacy system at `{path}`. Use the `legacy-modernization-orchestrator` agent."
+> "Modernize the legacy system at `{path}`. Use the `nexia-orchestrator` agent."
 
 ---
 
@@ -180,7 +180,7 @@ When extending the framework with a new skill:
    > **Policy (enforced):** Every skill under `.github/skills/*/SKILL.md` MUST have a corresponding `.agent.md` under `.github/agents/` and a lightweight wrapper under `.claude/agents/`. Both the agent file and the skill file must be updated in the same PR when either changes. CI must fail if a `SKILL.md` exists without a matching `.agent.md`.
 
 4. Register the new skill in:
-   - `.github/agents/legacy-modernization-orchestrator.agent.md` (phase table + artifact map)
+   - `.github/agents/nexia-orchestrator.agent.md` (phase table + artifact map)
    - `AGENTS.md` (agent roster)
    - `CLAUDE.md` (agent roster)
    - `.github/skills/STANDARDS_OUTPUTS.md` (artifact tree)

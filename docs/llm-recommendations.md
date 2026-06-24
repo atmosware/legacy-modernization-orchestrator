@@ -79,7 +79,7 @@ If unsure, I recommend [A for High Risk / B for Medium / B or C for Low — see 
 
 | Risk Level | Phases | Default to suggest |
 |---|---|---|
-| **High** — errors propagate downstream or are hard to reverse | `legacy-modernization-orchestrator`, `legacy-analysis`, `target-architecture`, `security-review`, `data-migration` | A |
+| **High** — errors propagate downstream or are hard to reverse | `nexia-orchestrator`, `legacy-analysis`, `target-architecture`, `security-review`, `data-migration` | A |
 | **Medium** — errors are local and caught in review | `backend-development`, `frontend-development`, `ios-development`, `android-development`, `cross-platform-mobile`, `compare-legacy-to-new`, `final-validation` | B |
 | **Low** — output is structural/templated and easily verified | `legacy-architecture`, `tech-stack-selection`, `ui-ux-design`, `devops-infra`, `quality-playbook`, `agent-governance` | B or C |
 
@@ -124,7 +124,7 @@ If unsure, I recommend [A for High Risk / B for Medium / B or C for Low — see 
 
 ---
 
-### 1. `legacy-modernization-orchestrator`
+### 1. `nexia-orchestrator`
 
 **Phase Risk:** High
 
@@ -639,7 +639,7 @@ If your IDE or agentic platform only exposes one provider, use the corresponding
 
 | Agent | Key Demand | Top Pick | Provider | Phase Risk |
 |---|---|---|---|---|
-| `legacy-modernization-orchestrator` | Instruction fidelity + context | Claude Opus 4.7 | Anthropic | High |
+| `nexia-orchestrator` | Instruction fidelity + context | Claude Opus 4.7 | Anthropic | High |
 | `legacy-analysis` | Large context + synthesis | Gemini 3.1 Pro | Google | High |
 | `legacy-architecture` | Structured diagram gen | Claude Sonnet 4.6 | Anthropic | Low |
 | `tech-stack-selection` | Template fill + Q&A | Gemini 2.5 Flash | Google | Low |

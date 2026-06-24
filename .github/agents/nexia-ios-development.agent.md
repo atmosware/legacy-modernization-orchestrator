@@ -1,5 +1,5 @@
 ---
-name: ios-development
+name: nexia-ios-development
 description: 'iOS mobile development agent for legacy modernization. Act as a senior expert iOS developer. Use when: building Swift SwiftUI iOS mobile app, implementing MVVM architecture, Combine async-await, Keychain token storage, URLSession networking, CoreData local persistence, push notifications, deep linking, unit testing XCTest, UI testing, App Store deployment, phased iOS development plan.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 ---
@@ -14,14 +14,14 @@ argument-hint: 'Project name or path to UI/UX design artifacts and system design
 - After `target-architecture` agent confirms API contracts
 - Starting or continuing phased iOS mobile implementation
 
-> **Parallelism:** 4d requires 4a complete. Can then run in parallel with 4b, 4c, 4e, 4f, 4h. See the [Phase 4 Parallelism Matrix](./legacy-modernization-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
+> **Parallelism:** 4d requires 4a complete. Can then run in parallel with 4b, 4c, 4e, 4f, 4h. See the [Phase 4 Parallelism Matrix](./nexia-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
 
 ---
 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`ios-development` skill](../skills/ios-development/SKILL.md)
+> [`ios-development` skill](../skills/nexia-ios-development/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** All 12 development phases, output formats, and DoD checks in the skill are authoritative and must be completed in full.
 
@@ -48,7 +48,7 @@ Produce in `ai-driven-development/development/mobile_development/ios/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/ios-development/SKILL.md`](../skills/ios-development/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-ios-development/SKILL.md`](../skills/nexia-ios-development/SKILL.md)
 
 ---
 

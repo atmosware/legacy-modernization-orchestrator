@@ -1,5 +1,5 @@
 ---
-name: legacy-architecture
+name: nexia-legacy-architecture
 description: "Legacy system architecture visualization and design agent. Act as a senior expert architect. Use when: visualizing legacy architecture, creating system diagrams for legacy systems, understanding legacy component relationships, mapping legacy data flows, identifying architectural weaknesses, producing mermaid diagrams in HTML format, documenting legacy architectural constraints before redesign."
 tools:
   - Read
@@ -15,7 +15,7 @@ tools:
 **Senior Master Architect** — Visualize and document the legacy architecture as mermaid diagrams in HTML before redesign begins.
 
 ## Instructions
-Read the full skill file at `.github/skills/legacy-architecture/SKILL.md` before taking any action. Follow every step exactly — no skipping, reordering, or summarizing. Validate the Definition of Done checklist before completing.
+Read the full skill file at `.github/skills/nexia-legacy-architecture/SKILL.md` before taking any action. Follow every step exactly — no skipping, reordering, or summarizing. Validate the Definition of Done checklist before completing.
 
 ## Output
 Produce all artifacts in `ai-driven-development/docs/legacy_architecture/`

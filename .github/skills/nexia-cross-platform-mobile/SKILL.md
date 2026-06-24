@@ -1,5 +1,5 @@
 ---
-name: cross-platform-mobile
+name: nexia-cross-platform-mobile
 description: 'Cross-platform mobile skill for legacy modernization. Use when: building a Flutter or React Native app for iOS and Android from one codebase with standard state management, secure storage, API networking, push notifications, testing, and store release workflows. Not the default path: use ios-development and android-development for native-first projects. Requires tech_stack_selections.md confirming Flutter or React Native.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 version: 1.0.0
@@ -239,7 +239,7 @@ For each screen in scope (read from `ui_ux_pages.md`):
 5. Handle loading, empty, error, and success states
 6. Write at least one widget/component test per screen
 
-> Refer to [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §2.4 (Anemic Domain Model) and §2.7 (N+1 Query) before finalising data-fetching strategy.
+> Refer to [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §2.4 (Anemic Domain Model) and §2.7 (N+1 Query) before finalising data-fetching strategy.
 
 **Feature architecture (Flutter example)**:
 ```
@@ -371,7 +371,7 @@ src/features/orders/
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 4d/4e quality gates (mobile), §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 4d/4e quality gates (mobile), §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
 
 ### Code Quality
 - [ ] Lint zero warnings (flutter_lints / ESLint-airbnb-typescript)
@@ -405,4 +405,4 @@ src/features/orders/
 ---
 
 ## Next Skill
-When cross-platform mobile is production-ready, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) to validate equivalence and improvements.
+When cross-platform mobile is production-ready, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) to validate equivalence and improvements.

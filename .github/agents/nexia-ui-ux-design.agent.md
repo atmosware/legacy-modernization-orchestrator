@@ -1,5 +1,5 @@
 ---
-name: ui-ux-design
+name: nexia-ui-ux-design
 description: 'UI/UX design agent for legacy system redesign. Act as a senior expert UI/UX developer. Use when: designing user interfaces for modernized application, creating wireframes mockups design systems, defining user journeys for web React and mobile iOS Android, applying WCAG accessibility standards, building responsive mobile-first design, producing HTML design previews, creating component design system tokens typography colors.'
 argument-hint: 'Application name and list of primary user roles or workflows to design for'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Application name and list of primary user roles or workflows to 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`ui-ux-design` skill](../skills/ui-ux-design/SKILL.md)
+> [`ui-ux-design` skill](../skills/nexia-ui-ux-design/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** Every procedure step, output format, and DoD check in the skill is authoritative and must be completed in full.
 
@@ -40,7 +40,7 @@ Produce in `ai-driven-development/docs/ui_design/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/ui-ux-design/SKILL.md`](../skills/ui-ux-design/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-ui-ux-design/SKILL.md`](../skills/nexia-ui-ux-design/SKILL.md)
 
 ---
 

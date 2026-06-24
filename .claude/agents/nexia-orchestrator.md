@@ -1,5 +1,5 @@
 ---
-name: legacy-modernization-orchestrator
+name: nexia-orchestrator
 description: "Master orchestrator agent for end-to-end legacy system modernization. Use when: starting a full legacy modernization project, orchestrating all redesign phases in order, running the complete legacy modernization workflow, validating phase completion before proceeding, coordinating analysis design development comparison phases. Development targets (backend, web frontend, iOS, Android) are optional and selected per project scope. Invokes other redesign agents in sequence with DoD gates."
 tools:
   - Read
@@ -32,4 +32,4 @@ Phase 6: Final Validation
 Phases 1–3 are always required. Ask the user which Phase 4 targets to include before proceeding. Phases 4a–4e can run in parallel once scope is confirmed.
 
 ## Instructions
-Read `.github/agents/legacy-modernization-orchestrator.agent.md` before starting. For each phase, invoke the corresponding subagent and verify its Definition of Done before advancing to the next phase.
+Read `.github/agents/nexia-orchestrator.agent.md` before starting. For each phase, invoke the corresponding subagent and verify its Definition of Done before advancing to the next phase.

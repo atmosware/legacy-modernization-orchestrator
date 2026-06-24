@@ -1,5 +1,5 @@
 ---
-name: dotnet-aspnetcore
+name: nexia-dotnet-aspnetcore
 description: '.NET 9 + ASP.NET Core backend — clean/hexagonal architecture, EF Core, Serilog, xUnit, Testcontainers.NET, MSBuild, Dockerfile. Apply when tech_stack_selections.md confirms .NET + ASP.NET Core as the backend stack.'
 argument-hint: 'Project name or path to system design artifacts to base backend implementation on'
 version: 1.0.0
@@ -9,7 +9,7 @@ status: Active
 
 # .NET 9 + ASP.NET Core — Backend Implementation
 
-> These are the .NET-specific implementation steps that complement [`backend-development/SKILL.md`](../backend-development/SKILL.md). Apply these when `tech_stack_selections.md` confirms `.NET + ASP.NET Core` as the backend stack.
+> These are the .NET-specific implementation steps that complement [`backend-development/SKILL.md`](../nexia-backend-development/SKILL.md). Apply these when `tech_stack_selections.md` confirms `.NET + ASP.NET Core` as the backend stack.
 
 See also: [`STANDARDS.md`](./STANDARDS.md) for .NET-specific architecture rules, project folder structure, and Docker image template.
 
@@ -246,10 +246,10 @@ app.MapHealthChecks("/health/ready", new() { Predicate = r => r.Tags.Contains("r
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §2 — Common Anti-Patterns (§2.4 Anemic Domain Model, §2.7 N+1 Query) and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §2 — Common Anti-Patterns (§2.4 Anemic Domain Model, §2.7 N+1 Query) and §7 — Code Review Checklist.
 
 ### Inherited from `backend-development`
-All DoD items in [`backend-development/SKILL.md`](../backend-development/SKILL.md) must be ✅ before this DoD is evaluated.
+All DoD items in [`backend-development/SKILL.md`](../nexia-backend-development/SKILL.md) must be ✅ before this DoD is evaluated.
 
 ### Additional DoD — .NET / ASP.NET Core
 
@@ -272,4 +272,4 @@ All DoD items in [`backend-development/SKILL.md`](../backend-development/SKILL.m
 - [ ] `dotnet publish` produces a self-contained runnable artifact or Docker image
 
 #### Next Skill
-When all items above are ✅, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) (Phase 5).
+When all items above are ✅, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) (Phase 5).

@@ -1,5 +1,5 @@
 ---
-name: python-fastapi
+name: nexia-python-fastapi
 description: 'Python 3.12 + FastAPI backend — clean/hexagonal architecture, SQLAlchemy 2, Alembic, Pydantic v2, pytest-asyncio, structlog, pyproject.toml. Apply when tech_stack_selections.md confirms Python + FastAPI as the backend stack.'
 argument-hint: 'Project name or path to system design artifacts to base backend implementation on'
 version: 1.0.0
@@ -9,7 +9,7 @@ status: Active
 
 # Python 3.12 + FastAPI — Backend Implementation
 
-> These are the Python-specific implementation steps that complement [`backend-development/SKILL.md`](../backend-development/SKILL.md). Apply these when `tech_stack_selections.md` confirms `Python + FastAPI` as the backend stack.
+> These are the Python-specific implementation steps that complement [`backend-development/SKILL.md`](../nexia-backend-development/SKILL.md). Apply these when `tech_stack_selections.md` confirms `Python + FastAPI` as the backend stack.
 
 See also: [`STANDARDS.md`](./STANDARDS.md) for Python-specific architecture rules, project folder structure, and Docker image template.
 
@@ -296,10 +296,10 @@ async def readiness(db: AsyncSession = Depends(get_db)) -> dict:
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §2 — Common Anti-Patterns (§2.4 Anemic Domain Model, §2.7 N+1 Query) and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §2 — Common Anti-Patterns (§2.4 Anemic Domain Model, §2.7 N+1 Query) and §7 — Code Review Checklist.
 
 ### Inherited from `backend-development`
-All DoD items in [`backend-development/SKILL.md`](../backend-development/SKILL.md) must be ✅ before this DoD is evaluated.
+All DoD items in [`backend-development/SKILL.md`](../nexia-backend-development/SKILL.md) must be ✅ before this DoD is evaluated.
 
 ### Additional DoD — Python / FastAPI
 
@@ -321,4 +321,4 @@ All DoD items in [`backend-development/SKILL.md`](../backend-development/SKILL.m
 - [ ] `/metrics` returns Prometheus-format metrics
 
 #### Next Skill
-When all items above are ✅, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) (Phase 5).
+When all items above are ✅, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) (Phase 5).

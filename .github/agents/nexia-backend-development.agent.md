@@ -1,5 +1,5 @@
 ---
-name: backend-development
+name: nexia-backend-development
 description: 'Backend development agent for legacy modernization. Act as a senior expert backend developer. Use when: building Java Spring Boot / .NET ASP.NET Core / Python FastAPI / Go Gin-Fiber backend, implementing clean architecture hexagonal architecture, setting up domain-driven design modules, implementing REST APIs OpenAPI security JWT OAuth2, database ORM repositories, testing unit integration Testcontainers, observability metrics tracing logging, phased development plan backend implementation.'
 argument-hint: 'Project name or path to system design artifacts to base backend implementation on'
 ---
@@ -14,14 +14,14 @@ argument-hint: 'Project name or path to system design artifacts to base backend 
 - Starting or continuing backend implementation phases
 - Need phased development plan for backend, or ready to implement a specific phase
 
-> **Parallelism:** 4b can run in parallel with 4a and 4h. See the [Phase 4 Parallelism Matrix](./legacy-modernization-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
+> **Parallelism:** 4b can run in parallel with 4a and 4h. See the [Phase 4 Parallelism Matrix](./nexia-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
 
 ---
 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`backend-development` skill](../skills/backend-development/SKILL.md)
+> [`backend-development` skill](../skills/nexia-backend-development/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** All 13 development phases, output formats, and DoD checks in the skill are authoritative and must be completed in full.
 
@@ -47,7 +47,7 @@ Produce in `ai-driven-development/development/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/backend-development/SKILL.md`](../skills/backend-development/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-backend-development/SKILL.md`](../skills/nexia-backend-development/SKILL.md)
 
 ---
 

@@ -5,7 +5,7 @@
 These are the **non-negotiable, language-agnostic** standards for all backend implementations.
 The SKILL.md procedure references these. Do not deviate — create an ADR if a justified exception is needed.
 
-> **Java 21 + Spring Boot**: For Java-specific standards (Maven folder structure, Lombok, Spring annotations, Docker image template), see [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md).
+> **Java 21 + Spring Boot**: For Java-specific standards (Maven folder structure, Lombok, Spring annotations, Docker image template), see [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md).
 
 ---
 
@@ -55,7 +55,7 @@ Summary: `type` · `title` · `status` · `detail` · `instance` · `traceId` (m
 [Expand each phase with specific tasks as you start it]
 ```
 
-> For Docker image templates, see the stack-specific standards file (e.g. [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md) § Docker Image Template).
+> For Docker image templates, see the stack-specific standards file (e.g. [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md) § Docker Image Template).
 
 ---
 
@@ -69,7 +69,7 @@ Organize configuration files by environment profile. All sensitive values must c
 
 Environment variable naming convention: `APP_DATASOURCE_URL`, `APP_SECURITY_JWT_SECRET`
 
-> For the Spring Boot-specific file layout (`application.yml`, `application-dev.yml`, `logback-spring.xml`), see [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md).
+> For the Spring Boot-specific file layout (`application.yml`, `application-dev.yml`, `logback-spring.xml`), see [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md).
 
 ---
 
@@ -94,4 +94,4 @@ Every log entry in production must include:
 - `userId` (where available, from security context)
 - Never log: passwords, tokens, PII, full request bodies
 
-> For Java + Spring Boot logging configuration (Logback JSON, MDC fields), see [`../java-springboot/STANDARDS.md`](../java-springboot/STANDARDS.md).
+> For Java + Spring Boot logging configuration (Logback JSON, MDC fields), see [`../nexia-java-springboot/STANDARDS.md`](../nexia-java-springboot/STANDARDS.md).

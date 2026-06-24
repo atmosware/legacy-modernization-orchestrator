@@ -1,5 +1,5 @@
 ---
-name: java-springboot
+name: nexia-java-springboot
 description: 'Java 21 + Spring Boot 3 backend implementation agent. Tier-2 backend language skill. Apply when tech_stack_selections.md confirms Java + Spring Boot as the backend stack. Use when: implementing Spring Boot clean/hexagonal architecture, Spring Data JPA repositories, Micrometer observability, Logback/SLF4J logging, JUnit 5 unit tests, Testcontainers integration tests, Maven or Gradle build, multi-stage Dockerfile.'
 argument-hint: 'Project name or path to system design artifacts and tech_stack_selections.md confirming Java + Spring Boot'
 ---
@@ -19,7 +19,7 @@ argument-hint: 'Project name or path to system design artifacts and tech_stack_s
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`java-springboot` skill](../skills/java-springboot/SKILL.md)
+> [`java-springboot` skill](../skills/nexia-java-springboot/SKILL.md)
 
 Apply this **in addition to** the `backend-development` skill — the two skills are complementary. **Do NOT skip, reorder, or summarize steps.**
 
@@ -41,4 +41,4 @@ Produce in `ai-driven-development/development/backend_development/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/java-springboot/SKILL.md`](../skills/java-springboot/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-java-springboot/SKILL.md`](../skills/nexia-java-springboot/SKILL.md)

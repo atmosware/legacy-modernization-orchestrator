@@ -1,5 +1,5 @@
 ---
-name: tech-stack-selection
+name: nexia-tech-stack-selection
 description: 'Phase 2.5 Tech Stack Selection Gate. Use when: collecting all flexible technology choices (backend language, frontend framework, database, mobile targets, cloud provider, secret management, deployment platform, observability) after Phase 2 and writing them to tech_stack_selections.md. All downstream agents (Phases 3–6) read from this file exclusively — do not ask for tech choices again after this gate.'
 argument-hint: 'Project name (legacy architecture artifacts are read automatically from ai-driven-development/docs/)'
 version: 1.0.0
@@ -24,7 +24,7 @@ status: Active
 | Legacy architecture | `ai-driven-development/docs/legacy_architecture/legacy_architecture.md` | Always |
 
 **Output:** `ai-driven-development/docs/tech_stack_selections.md`  
-**Template / output schema:** `.github/skills/tech-stack-selection/tech_stack_selections.template.md`
+**Template / output schema:** `.github/skills/nexia-tech-stack-selection/tech_stack_selections.template.md`
 
 ---
 
@@ -216,13 +216,13 @@ Record the outcome (placeholder or default) and continue.
 
 ## Output
 
-Save all confirmed choices to `ai-driven-development/docs/tech_stack_selections.md` using `.github/skills/tech-stack-selection/tech_stack_selections.template.md` as the schema. Every mandatory field for in-scope tiers must be filled — no placeholder values remain.
+Save all confirmed choices to `ai-driven-development/docs/tech_stack_selections.md` using `.github/skills/nexia-tech-stack-selection/tech_stack_selections.template.md` as the schema. Every mandatory field for in-scope tiers must be filled — no placeholder values remain.
 
 ---
 
 ## Definition of Done
 
-> 📋 **Quality review**: Before confirming choices, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §1 — Architecture Decision Trees (monolith vs microservices, DB strategy, REST vs GraphQL vs gRPC).
+> 📋 **Quality review**: Before confirming choices, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §1 — Architecture Decision Trees (monolith vs microservices, DB strategy, REST vs GraphQL vs gRPC).
 
 - [ ] User answered all questions for all in-scope tiers (or selected the default stack)
 - [ ] `ai-driven-development/docs/tech_stack_selections.md` created with all confirmed choices

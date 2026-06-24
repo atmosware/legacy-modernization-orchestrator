@@ -1,5 +1,5 @@
 ---
-name: ios-development
+name: nexia-ios-development
 description: 'iOS mobile development skill for legacy modernization. Act as a senior expert iOS developer. Use when: building Swift SwiftUI iOS mobile app, implementing MVVM architecture, Combine async-await, Keychain token storage, URLSession networking, CoreData local persistence, push notifications, deep linking, unit testing XCTest, UI testing, App Store deployment, phased iOS development plan.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 version: 1.0.0
@@ -466,7 +466,7 @@ Implement iOS platform extension features for the project. Skip any item not req
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 4d quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 4d quality gates, §4 — Cross-Cutting Concerns checklist, and §7 — Code Review Checklist.
 
 ### Code Quality
 - [ ] SwiftLint zero warnings
@@ -504,4 +504,4 @@ Implement iOS platform extension features for the project. Skip any item not req
 ---
 
 ## Next Skill
-When iOS app is production-ready, proceed to [`compare-legacy-to-new`](../compare-legacy-to-new/SKILL.md) to validate functional equivalence.
+When iOS app is production-ready, proceed to [`compare-legacy-to-new`](../nexia-compare-legacy-to-new/SKILL.md) to validate functional equivalence.

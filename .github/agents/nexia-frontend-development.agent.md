@@ -1,5 +1,5 @@
 ---
-name: frontend-development
+name: nexia-frontend-development
 description: 'Frontend development agent for legacy modernization. Act as a senior expert frontend developer. Use when: building React / Vue / Angular / Svelte TypeScript frontend, implementing design system components, state management TanStack Query Zustand Pinia NgRx, API integration Axios, code splitting lazy loading performance optimization, Vitest Playwright testing, phased frontend development plan. For mobile: use ios-development or android-development agents instead.'
 argument-hint: 'Project name or path to UI/UX design artifacts and system design to implement'
 ---
@@ -14,14 +14,14 @@ argument-hint: 'Project name or path to UI/UX design artifacts and system design
 - After `target-architecture` agent confirms API contracts
 - Starting or continuing phased frontend implementation
 
-> **Parallelism:** 4c requires 4a complete. Can then run in parallel with 4b, 4d, 4e, 4f, 4h. See the [Phase 4 Parallelism Matrix](./legacy-modernization-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
+> **Parallelism:** 4c requires 4a complete. Can then run in parallel with 4b, 4d, 4e, 4f, 4h. See the [Phase 4 Parallelism Matrix](./nexia-orchestrator.agent.md#parallelizable-phases-after-phase-3--scope-confirmed).
 
 ---
 
 ## Skill Reference
 This agent executes by strictly following every step defined in:
 
-> [`frontend-development` skill](../skills/frontend-development/SKILL.md)
+> [`frontend-development` skill](../skills/nexia-frontend-development/SKILL.md)
 
 **Do NOT skip, reorder, or summarize steps.** All 12 development phases, output formats, and DoD checks in the skill are authoritative and must be completed in full.
 
@@ -48,7 +48,7 @@ Produce in `ai-driven-development/development/`:
 
 ## Definition of Done
 > All items must be ✅ before the orchestrator advances to the next phase.  
-> Authoritative checklist: [`../skills/frontend-development/SKILL.md`](../skills/frontend-development/SKILL.md)
+> Authoritative checklist: [`../skills/nexia-frontend-development/SKILL.md`](../skills/nexia-frontend-development/SKILL.md)
 
 ---
 

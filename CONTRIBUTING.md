@@ -11,8 +11,8 @@ Thank you for contributing. This document covers everything you need to add, edi
 - Git — clone the repo and work on a feature branch
 
 ```bash
-git clone https://github.com/tciates/legacy-modernization-orchestrator.git
-cd legacy-modernization-orchestrator
+git clone https://github.com/tciates/nexia-orchestrator.git
+cd nexia-orchestrator
 ```
 
 ---
@@ -142,7 +142,7 @@ Then add the skill name to the `AGENTS` array in `bin/install.js`, and add the a
 Add the new skill to:
 - `AGENTS.md` — agent roster section
 - `CLAUDE.md` — Agent Roster table
-- `.github/agents/legacy-modernization-orchestrator.agent.md` — phase table
+- `.github/agents/nexia-orchestrator.agent.md` — phase table
 - `.github/skills/STANDARDS_OUTPUTS.md` — artifact tree
 
 ### 5 — Sync and validate
@@ -166,7 +166,7 @@ node scripts/validate-roster.js         # must exit 0 before PR
 
 ## Deprecating a Skill
 
-Follow the deprecation process in [`agent-governance/SKILL.md §9`](.github/skills/agent-governance/SKILL.md). Summary:
+Follow the deprecation process in [`agent-governance/SKILL.md §9`](.github/skills/nexia-agent-governance/SKILL.md). Summary:
 
 1. Change `status: Active` → `status: Deprecated` in frontmatter; add `deprecated_since`, `sunset_date` (6 months), and `successor`.
 2. Add a `## ⚠️ Deprecated` banner to the skill body.

@@ -1,5 +1,5 @@
 ---
-name: ui-ux-design
+name: nexia-ui-ux-design
 description: 'UI/UX design skill for legacy system redesign. Act as a senior master UI/UX developer. Use when: designing user interfaces for modernized application, creating wireframes mockups design systems, defining user journeys for web React and mobile iOS Android, applying WCAG accessibility standards, building responsive mobile-first design, producing HTML design previews, creating component design system tokens typography colors.'
 argument-hint: 'Application name and list of primary user roles or workflows to design for'
 version: 1.0.0
@@ -384,7 +384,7 @@ Produce `ai-driven-development/docs/ui_design/design-implementation-checklist.md
 
 ## Definition of Done (DoD)
 
-> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../quality-playbook/SKILL.md) §3 — Phase 4c/4d/4e quality gates and §4 — Cross-Cutting Concerns checklist (security and accessibility).
+> 📋 **Quality review**: Before marking this phase complete, consult [quality-playbook/SKILL.md](../nexia-quality-playbook/SKILL.md) §3 — Phase 4c/4d/4e quality gates and §4 — Cross-Cutting Concerns checklist (security and accessibility).
 
 ### UX Quality
 - [ ] User journeys cover all primary use cases identified in analysis
@@ -420,10 +420,10 @@ Produce `ai-driven-development/docs/ui_design/design-implementation-checklist.md
 ---
 
 ## Next Skill
-Proceed to the client implementation skill(s) matching the confirmed scope in `tech_stack_selections.md`. All client skills can run in parallel with each other and with [`backend-development`](../backend-development/SKILL.md):
+Proceed to the client implementation skill(s) matching the confirmed scope in `tech_stack_selections.md`. All client skills can run in parallel with each other and with [`backend-development`](../nexia-backend-development/SKILL.md):
 
 | Confirmed target | Next skill |
 |---|---|
-| Web frontend (React / Vue / Angular / Svelte) | [`frontend-development`](../frontend-development/SKILL.md) |
-| iOS | [`ios-development`](../ios-development/SKILL.md) |
-| Android | [`android-development`](../android-development/SKILL.md) |
+| Web frontend (React / Vue / Angular / Svelte) | [`frontend-development`](../nexia-frontend-development/SKILL.md) |
+| iOS | [`ios-development`](../nexia-ios-development/SKILL.md) |
+| Android | [`android-development`](../nexia-android-development/SKILL.md) |

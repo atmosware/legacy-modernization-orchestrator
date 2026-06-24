@@ -388,7 +388,7 @@ status: Active
 
 ### Rules
 
-- **`name`** must equal the directory name of the skill (e.g., `legacy-analysis` for `.github/skills/legacy-analysis/SKILL.md`). CI will fail if they diverge.
+- **`name`** must equal the directory name of the skill (e.g., `legacy-analysis` for `.github/skills/nexia-legacy-analysis/SKILL.md`). CI will fail if they diverge.
 - **`description`** must be a single line (no newlines). Descriptions > 500 chars generate a CI warning; descriptions > 800 chars are a CI error.
 - **`argument-hint`** is required on all skills. For advisory reference skills that take no argument (e.g., `agent-governance`, `quality-playbook`), use the value `"no argument required"` — do not omit the field.
 - **`version`** must follow `MAJOR.MINOR.PATCH` semver. Start at `1.0.0` for all existing skills.

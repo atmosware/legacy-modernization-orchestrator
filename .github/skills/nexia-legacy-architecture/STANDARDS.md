@@ -1,6 +1,6 @@
 # Legacy System Design Standards
 
-> **Tier 2 — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md). Core standards apply universally; this file adds legacy-architecture–specific HTML templates and diagram conventions.
+> **Tier 2 — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md). Core standards apply universally; this file adds nexia-legacy-architecture–specific HTML templates and diagram conventions.
 
 Reference templates for producing the `legacy_architecture.html` file.
 Use these as starting points — **replace all placeholder node labels** with the actual legacy system components discovered during analysis.
@@ -68,7 +68,7 @@ Use the **warm light design system** — warm cream/amber palette: `#7c4a1e` pri
 
 <header>
   <h1>Legacy System Architecture</h1>
-  <p>Legacy architecture diagrams — produced by legacy-architecture skill</p>
+  <p>Legacy architecture diagrams — produced by nexia-legacy-architecture skill</p>
 </header>
 
 <main>
@@ -186,7 +186,7 @@ sequenceDiagram
 </main>
 
 <footer>
-  <p>Legacy System Architecture — produced by legacy-architecture skill</p>
+  <p>Legacy System Architecture — produced by nexia-legacy-architecture skill</p>
 </footer>
 
 <script>

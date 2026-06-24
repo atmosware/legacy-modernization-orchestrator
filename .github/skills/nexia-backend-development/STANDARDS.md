@@ -1,6 +1,6 @@
 # Backend Development Standards
 
-> **Tier 2 — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md). Core standards apply universally; this file adds language-agnostic backend architecture rules. Language-specific STANDARDS.md files (e.g., `java-springboot/`, `dotnet-aspnetcore/`, `python-fastapi/`, `go-gin-fiber/`) extend this file further.
+> **Tier 2 — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md). Core standards apply universally; this file adds language-agnostic backend architecture rules. Language-specific STANDARDS.md files (e.g., `nexia-java-springboot/`, `nexia-dotnet-aspnetcore/`, `nexia-python-fastapi/`, `nexia-go-gin-fiber/`) extend this file further.
 
 These are the **non-negotiable, language-agnostic** standards for all backend implementations.
 The SKILL.md procedure references these. Do not deviate — create an ADR if a justified exception is needed.

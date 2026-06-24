@@ -1,5 +1,5 @@
 {
-  "skill": "dotnet-aspnetcore",
+  "skill": "nexia-dotnet-aspnetcore",
   "version": "1.0.0",
   "generated_from": "SKILL.md — run 'node scripts/generate-dod.js' to regenerate",
   "items": [

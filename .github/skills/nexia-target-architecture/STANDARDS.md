@@ -1,6 +1,6 @@
 # Target System Design Standards
 
-> **Tier 2 — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md). Core standards apply universally; this file adds target-architecture–specific HTML templates and diagram conventions.
+> **Tier 2 — Skill-local standards.** Extends [Core Standards (Tier 1)](../../standards/core.md). Core standards apply universally; this file adds nexia-target-architecture–specific HTML templates and diagram conventions.
 
 Reference templates for producing `target_architecture.html` and `target_architecture.md`.
 Use these as starting points — **replace all placeholder names, services, and labels** with the actual system components.
@@ -69,7 +69,7 @@ Use the **warm light design system** — warm off-white/terracotta palette: `#1e
 
 <header>
   <h1>Target System Architecture</h1>
-  <div class="subtitle">New system design — produced by target-architecture skill</div>
+  <div class="subtitle">New system design — produced by nexia-target-architecture skill</div>
 </header>
 
 <main>
@@ -215,7 +215,7 @@ graph TB
 </main>
 
 <footer>
-  <p>Target System Architecture — produced by target-architecture skill</p>
+  <p>Target System Architecture — produced by nexia-target-architecture skill</p>
 </footer>
 
 <script>

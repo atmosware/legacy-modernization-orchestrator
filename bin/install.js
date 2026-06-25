@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-// bin/install.js — Legacy Modernization Orchestrator installer
+// bin/install.js — Nexia installer
 // Usage:
-//   npx legacy-modernization-orchestrator               (interactive)
-//   npx legacy-modernization-orchestrator --global      (global, all runtimes)
-//   npx legacy-modernization-orchestrator --local       (current project)
-//   npx legacy-modernization-orchestrator --claude      (Claude Code only)
-//   npx legacy-modernization-orchestrator --codex       (Codex CLI only)
-//   npx legacy-modernization-orchestrator --cursor      (Cursor only)
-//   npx legacy-modernization-orchestrator --uninstall   (remove)
+//   npx nexia-orchestrator               (interactive)
+//   npx nexia-orchestrator --global      (global, all runtimes)
+//   npx nexia-orchestrator --local       (current project)
+//   npx nexia-orchestrator --claude      (Claude Code only)
+//   npx nexia-orchestrator --codex       (Codex CLI only)
+//   npx nexia-orchestrator --cursor      (Cursor only)
+//   npx nexia-orchestrator --uninstall   (remove)
 
 import fs from 'fs';
 import path from 'path';
@@ -25,32 +25,32 @@ const PKG_VERSION  = JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package
 const LEGACY_GLOBAL_INSTALL_DIRNAME = 'legacy-modernization-orchestrator';
 
 const AGENTS = [
-  'legacy-analysis',
-  'legacy-architecture',
-  'target-architecture',
-  'ui-ux-design',
-  'backend-development',
-  'frontend-development',
-  'ios-development',
-  'android-development',
-  'cross-platform-mobile',
-  'compare-legacy-to-new',
-  'legacy-modernization-orchestrator',
+  'nexia-legacy-analysis',
+  'nexia-legacy-architecture',
+  'nexia-target-architecture',
+  'nexia-ui-ux-design',
+  'nexia-backend-development',
+  'nexia-frontend-development',
+  'nexia-ios-development',
+  'nexia-android-development',
+  'nexia-cross-platform-mobile',
+  'nexia-compare-legacy-to-new',
+  'nexia-orchestrator',
   // Phase 2.5 gate (skill + template only — no .agent.md wrapper)
-  'tech-stack-selection',
+  'nexia-tech-stack-selection',
   // Tier-2 backend language skills
-  'java-springboot',
-  'dotnet-aspnetcore',
-  'python-fastapi',
-  'go-gin-fiber',
+  'nexia-java-springboot',
+  'nexia-dotnet-aspnetcore',
+  'nexia-python-fastapi',
+  'nexia-go-gin-fiber',
   // Optional phase skills
-  'data-migration',
-  'security-review',
-  'devops-infra',
-  'final-validation',
+  'nexia-data-migration',
+  'nexia-security-review',
+  'nexia-devops-infra',
+  'nexia-final-validation',
   // Cross-cutting reference skills
-  'agent-governance',
-  'quality-playbook',
+  'nexia-agent-governance',
+  'nexia-quality-playbook',
 ];
 
 const args = process.argv.slice(2);
@@ -290,7 +290,7 @@ function install(scope, selectedRuntimes) {
 
       console.log('');
       console.log(`  Claude Code → ${claudeBase}`);
-      console.log('  Usage: /legacy-analysis  or  @legacy-analysis');
+      console.log('  Usage: /nexia-legacy-analysis  or  @nexia-legacy-analysis');
     }
 
     if (runtime === 'codex') {
@@ -309,7 +309,7 @@ function install(scope, selectedRuntimes) {
 
       console.log('');
       console.log(`  Codex CLI → ${codexBase}`);
-      console.log('  Usage: $legacy-analysis');
+      console.log('  Usage: $nexia-legacy-analysis');
     }
 
     if (runtime === 'cursor') {
@@ -339,7 +339,7 @@ function install(scope, selectedRuntimes) {
       console.log('');
       console.log(`  Cursor → ${cursorBase}`);
       console.log('  Note: Cursor agents are always project-scoped (no global Cursor config).');
-      console.log('  Usage: @legacy-analysis  (in Cursor chat)');
+      console.log('  Usage: @nexia-legacy-analysis  (in Cursor chat)');
     }
 
     console.log('');

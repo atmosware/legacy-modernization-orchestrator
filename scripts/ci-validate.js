@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ci-validate.js — Framework self-tests for the legacy-modernization-orchestrator.
+ * ci-validate.js — Framework self-tests for the nexia-orchestrator.
  *
  * Complements scripts/validate-roster.js by enforcing structural / hygiene rules
  * that the roster validator does not cover. Designed for PR / CI execution.

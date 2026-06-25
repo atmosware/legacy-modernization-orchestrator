@@ -1,9 +1,10 @@
 {
-  "name": "legacy-modernization-orchestrator",
-  "version": "1.0.15",
+  "name": "nexia-orchestrator",
+  "version": "1.0.1",
   "type": "module",
-  "description": "Multi-agent framework for end-to-end legacy system modernization. Installs agents and skills for Claude Code and Codex CLI.",
+  "description": "Nexia — multi-agent framework for end-to-end legacy system modernization. Installs agents and skills for Claude Code and Codex CLI.",
   "keywords": [
+    "nexia",
     "legacy-modernization",
     "claude-code",
     "codex",
@@ -16,7 +17,7 @@
   "homepage": "https://github.com/tciates/legacy-modernization-orchestrator",
   "license": "MIT",
   "bin": {
-    "legacy-modernization-orchestrator": "./bin/install.js"
+    "nexia-orchestrator": "./bin/install.js"
   },
   "files": [
     "bin/",

@@ -14,24 +14,24 @@ ai-driven-development/
 ├── docs/
 │   │
 │   ├── tech_stack_selections.md                      ← Phase 2.5 (always — filled from template)
-│   │   [Template: .github/skills/tech-stack-selection/tech_stack_selections.template.md]
+│   │   [Template: .github/skills/nexia-tech-stack-selection/tech_stack_selections.template.md]
 │   │
 │   ├── adr/                                          ← Architecture Decision Records (as needed)
 │   │   └── ADR-{NNN}-{title}.md                     ← One file per decision
 │   │   [Created on demand by any phase — list is indicative, not exhaustive]
 │   │
-│   ├── legacy_analysis/                                    ← Phase 1: legacy-analysis
+│   ├── legacy_analysis/                                    ← Phase 1: nexia-legacy-analysis
 │   │   └── legacy_analysis.md                        ← Always
 │   │
-│   ├── legacy_architecture/                          ← Phase 2: legacy-architecture
+│   ├── legacy_architecture/                          ← Phase 2: nexia-legacy-architecture
 │   │   ├── legacy_architecture.md                   ← Always
 │   │   └── legacy_architecture.html                 ← Always (Mermaid diagrams: 4.1–4.6)
 │   │
-│   ├── target_architecture/                          ← Phase 3: target-architecture
+│   ├── target_architecture/                          ← Phase 3: nexia-target-architecture
 │   │   ├── target_architecture.md                   ← Always
 │   │   └── target_architecture.html                 ← Always (Mermaid diagrams)
 │   │
-│   ├── ui_design/                                    ← Phase 4a: ui-ux-design (if any UI)
+│   ├── ui_design/                                    ← Phase 4a: nexia-ui-ux-design (if any UI)
 │   │   ├── ui_ux_pages.md                           ← Screen inventory, user journeys, design tokens
 │   │   ├── ui_ux_pages.html                         ← HTML wireframe previews
 │   │   ├── tokens.json                              ← Design tokens (W3C format) — Step 8.1
@@ -40,33 +40,33 @@ ai-driven-development/
 │   │   └── storybook_stubs/                         ← Storybook story stubs — Step 8.3
 │   │       └── {ComponentName}/{ComponentName}.stories.tsx
 │   │
-│   ├── legacy_vs_new_system/                         ← Phase 5: compare-legacy-to-new
+│   ├── legacy_vs_new_system/                         ← Phase 5: nexia-compare-legacy-to-new
 │   │   ├── compare_legacy_to_new_system.md          ← Always
 │   │   └── compare_legacy_to_new_system.html        ← Always (Mermaid comparison diagrams)
 │   │
-│   ├── security_review/                              ← Phase 4g: security-review (optional)
+│   ├── security_review/                              ← Phase 4g: nexia-security-review (optional)
 │   │   ├── security_review_report.md               ← OWASP Top 10 audit findings
 │   │   └── security_review_report.html             ← HTML report with severity ratings
 │   │
-│   └── final_validation/                             ← Phase 6: final-validation (always)
+│   └── final_validation/                             ← Phase 6: nexia-final-validation (always)
 │       ├── release_readiness_checklist.md           ← All gates with status
 │       ├── go_no_go_decision.md                     ← Stakeholder sign-off record
 │       └── smoke_test_plan.md                       ← Post-cutover smoke tests
 │
 └── development/
     │
-    ├── be_development_todo.md                        ← Phase 4b: backend-development (if backend in scope)
+    ├── be_development_todo.md                        ← Phase 4b: nexia-backend-development (if backend in scope)
     │
-    ├── backend_development/                          ← Phase 4b: backend-development
+    ├── backend_development/                          ← Phase 4b: nexia-backend-development
     │   ├── {ProjectName}/                           ← Backend project root (e.g. Maven/Gradle/sln/pyproject.toml)
     │   │   ├── src/                                ← Application source
     │   │   ├── test/                               ← Tests
     │   │   └── {build-file}                        ← pom.xml / build.gradle.kts / {Name}.sln / pyproject.toml / go.mod
     │   └── README.md                               ← Setup, env vars, run, test instructions
     │
-    ├── fe_development_todo.md                        ← Phase 4c: frontend-development (if web frontend in scope)
+    ├── fe_development_todo.md                        ← Phase 4c: nexia-frontend-development (if web frontend in scope)
     │
-    ├── frontend_development/                         ← Phase 4c: frontend-development
+    ├── frontend_development/                         ← Phase 4c: nexia-frontend-development
     │   ├── {ProjectName}/                           ← Frontend project root (e.g. Vite/Next.js)
     │   │   ├── src/
     │   │   │   ├── components/                     ← Design system components
@@ -81,7 +81,7 @@ ai-driven-development/
     │
     ├── mobile_development/
     │   │
-    │   ├── ios/                                      ← Phase 4d: ios-development (if iOS in scope)
+    │   ├── ios/                                      ← Phase 4d: nexia-ios-development (if iOS in scope)
     │   │   ├── ios_development_todo.md
     │   │   └── {ProjectName}/                       ← Xcode project root
     │   │       ├── {ProjectName}.xcodeproj/
@@ -93,7 +93,7 @@ ai-driven-development/
     │   │       │   └── Resources/                  ← Assets, Localizable.strings
     │   │       └── {ProjectName}Tests/
     │   │
-    │   └── android/                                  ← Phase 4e: android-development (if Android in scope)
+    │   └── android/                                  ← Phase 4e: nexia-android-development (if Android in scope)
     │       ├── android_development_todo.md
     │       └── {ProjectName}/                       ← Gradle project root
     │           ├── app/
@@ -105,7 +105,7 @@ ai-driven-development/
     │           ├── build.gradle.kts
     │           └── settings.gradle.kts
     │
-    ├── cross-platform/                               ← Phase 4i: cross-platform-mobile (if Flutter/RN confirmed in tech_stack_selections.md)
+    ├── cross-platform/                               ← Phase 4i: nexia-cross-platform-mobile (if Flutter/RN confirmed in tech_stack_selections.md)
     │   ├── cross_platform_development_todo.md
     │   └── {ProjectName}/                           ← Flutter or React Native project root
     │       ├── lib/                                 ← Flutter: Dart source (core/, features/, shared/)
@@ -117,7 +117,7 @@ ai-driven-development/
     │       ├── ios/                                 ← iOS native project (generated)
     │       └── android/                             ← Android native project (generated)
     │
-    ├── data_migration/                               ← Phase 4f: data-migration (optional)
+    ├── data_migration/                               ← Phase 4f: nexia-data-migration (optional)
     │   ├── data_migration_todo.md
     │   ├── schema_migrations/                       ← Flyway/Alembic/Goose scripts
     │   │   ├── V001__initial_schema.sql
@@ -130,7 +130,7 @@ ai-driven-development/
     │   └── rollback/                               ← Rollback scripts
     │       └── rollback_V001.sql
     │
-    └── infra/                                        ← Phase 4h: devops-infra (optional)
+    └── infra/                                        ← Phase 4h: nexia-devops-infra (optional)
         ├── infra_todo.md
         ├── kubernetes/                              ← Namespace, Deployment, Service, Ingress, HPA manifests
         ├── helm/                                    ← Helm chart (Chart.yaml, values.yaml, templates/)
@@ -146,21 +146,21 @@ ai-driven-development/
 
 | Phase | Agent | Output Paths |
 |---|---|---|
-| 1 | legacy-analysis | `docs/legacy_analysis/legacy_analysis.md` |
-| 2 | legacy-architecture | `docs/legacy_architecture/legacy_architecture.md` + `.html` |
+| 1 | nexia-legacy-analysis | `docs/legacy_analysis/legacy_analysis.md` |
+| 2 | nexia-legacy-architecture | `docs/legacy_architecture/legacy_architecture.md` + `.html` |
 | 2.5 | Tech Stack Gate | `docs/tech_stack_selections.md` |
-| 3 | target-architecture | `docs/target_architecture/target_architecture.md` + `.html` |
-| 4a | ui-ux-design | `docs/ui_design/ui_ux_pages.md` + `.html` + `tokens.json` + `component_api.md` + `design-implementation-checklist.md` + `storybook_stubs/` |
-| 4b | backend-development | `development/be_development_todo.md` + `development/backend_development/` |
-| 4c | frontend-development | `development/fe_development_todo.md` + `development/frontend_development/` |
-| 4d | ios-development | `development/mobile_development/ios/ios_development_todo.md` + `development/mobile_development/ios/{ProjectName}/` |
-| 4e | android-development | `development/mobile_development/android/android_development_todo.md` + `development/mobile_development/android/{ProjectName}/` |
-| 4f | data-migration | `development/data_migration/` |
-| 4g | security-review | `docs/security_review/security_review_report.md` + `.html` |
-| 4h | devops-infra | `development/infra/` (infra_todo.md + kubernetes/ + helm/ + terraform/ + ci-cd/ + monitoring/ + secrets/) |
-| 4i | cross-platform-mobile | `development/mobile_development/cross-platform/cross_platform_development_todo.md` + `development/mobile_development/cross-platform/{ProjectName}/` |
-| 5 | compare-legacy-to-new | `docs/legacy_vs_new_system/compare_legacy_to_new_system.md` + `.html` |
-| 6 | final-validation | `docs/final_validation/release_readiness_checklist.md` + `go_no_go_decision.md` + `smoke_test_plan.md` |
+| 3 | nexia-target-architecture | `docs/target_architecture/target_architecture.md` + `.html` |
+| 4a | nexia-ui-ux-design | `docs/ui_design/ui_ux_pages.md` + `.html` + `tokens.json` + `component_api.md` + `design-implementation-checklist.md` + `storybook_stubs/` |
+| 4b | nexia-backend-development | `development/be_development_todo.md` + `development/backend_development/` |
+| 4c | nexia-frontend-development | `development/fe_development_todo.md` + `development/frontend_development/` |
+| 4d | nexia-ios-development | `development/mobile_development/ios/ios_development_todo.md` + `development/mobile_development/ios/{ProjectName}/` |
+| 4e | nexia-android-development | `development/mobile_development/android/android_development_todo.md` + `development/mobile_development/android/{ProjectName}/` |
+| 4f | nexia-data-migration | `development/data_migration/` |
+| 4g | nexia-security-review | `docs/security_review/security_review_report.md` + `.html` |
+| 4h | nexia-devops-infra | `development/infra/` (infra_todo.md + kubernetes/ + helm/ + terraform/ + ci-cd/ + monitoring/ + secrets/) |
+| 4i | nexia-cross-platform-mobile | `development/mobile_development/cross-platform/cross_platform_development_todo.md` + `development/mobile_development/cross-platform/{ProjectName}/` |
+| 5 | nexia-compare-legacy-to-new | `docs/legacy_vs_new_system/compare_legacy_to_new_system.md` + `.html` |
+| 6 | nexia-final-validation | `docs/final_validation/release_readiness_checklist.md` + `go_no_go_decision.md` + `smoke_test_plan.md` |
 
 ---
 

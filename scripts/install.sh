@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install.sh — Install Legacy Modernization Orchestrator agents and skills
+# install.sh — Install Nexia agents and skills
 # Usage: bash scripts/install.sh [--global | --local] [--claude] [--codex] [--cursor] [--all]
 #
 # This script delegates to bin/install.js, which handles path-patching of

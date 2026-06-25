@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# uninstall.sh — Remove Legacy Modernization Orchestrator agents and skills
+# uninstall.sh — Remove Nexia agents and skills
 # Usage: bash scripts/uninstall.sh [--global | --local] [--claude] [--codex] [--cursor] [--all]
 
 # This script delegates to bin/install.js so uninstall behaviour stays aligned

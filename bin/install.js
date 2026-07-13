@@ -27,6 +27,7 @@ const AGENTS = [
   'legacy-analysis',
   'legacy-architecture',
   'target-architecture',
+  'delivery-planning',
   'ui-ux-design',
   'backend-development',
   'frontend-development',

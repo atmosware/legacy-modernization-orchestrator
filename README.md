@@ -16,6 +16,7 @@ Agents are organized by the phase in which they are invoked. The master orchestr
 | 2 | `legacy-architecture` | Legacy architecture diagrams — Mermaid HTML, component map, data flow, deployment topology |
 | 2.5 | `tech-stack-selection` | Tech stack selection gate — confirms backend, frontend, DB, mobile, cloud, and infra choices |
 | 3 | `target-architecture` | Target architecture — Clean/Hexagonal/DDD, multi-stack (Java / .NET / Python / Go), API-first design |
+| 3.5 | `delivery-planning` | Implementation planning & effort estimation — alternative delivery strategies, team-size × with/without-AI scenario matrix, WBS, dependencies, parallel work streams _(optional, non-blocking; offered after Phase 3)_ |
 | 4a | `ui-ux-design` | Wireframes, design system, user journeys, WCAG accessibility, HTML previews, design tokens |
 | 4b | `backend-development` | Backend service — REST APIs, JWT/OAuth2, clean architecture, ORM, unit + integration tests, observability |
 | 4b+ | `java-springboot` | Tier-2 — Java 21 + Spring Boot 3, Spring Data JPA, Micrometer, JUnit 5, Testcontainers |

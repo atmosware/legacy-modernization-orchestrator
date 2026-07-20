@@ -49,6 +49,11 @@ Produce in `ai-driven-development/docs/implementation_planning/`:
 - `dependency_graph.html` — Mermaid DAG with critical path highlighted
 - `gantt_<plan>_<scenario>.html` — Mermaid gantt charts (≥ recommended plan, with-AI and without-AI)
 - `scenario_matrix.html` — visual comparison of all plan × team × AI scenarios
+- `block_defensibility_register.md` *(optional, conditional)* — large-block DEFEND/TRIM/DECOMPOSE verdicts
+- `open_items_crosswalk.md` *(optional, conditional)* — carried-forward open items × schedule impact × owner action
+- `director_briefing/` *(optional, conditional)* — presenter + sanitized customer-facing deck (HTML + PDF)
+
+Trigger conditions and full method for the three optional artifacts: [`../skills/delivery-planning/EXTENDED_ARTIFACTS.md`](../skills/delivery-planning/EXTENDED_ARTIFACTS.md).
 
 All HTML diagrams follow [`../skills/delivery-planning/STANDARDS.md`](../skills/delivery-planning/STANDARDS.md) and must pass `node scripts/validate-mermaid.js`.
 

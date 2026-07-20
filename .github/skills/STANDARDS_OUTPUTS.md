@@ -38,7 +38,10 @@ ai-driven-development/
 │   │   ├── service_module_inventory.md              ← Service/module × complexity × effort table
 │   │   ├── dependency_graph.html                    ← Mermaid DAG with critical path highlighted
 │   │   ├── scenario_matrix.html                     ← Plan × team-size × with/without-AI comparison
-│   │   └── gantt_{plan}_{scenario}.html             ← Mermaid gantt per plan × scenario (withAI / noAI)
+│   │   ├── gantt_{plan}_{scenario}.html             ← Mermaid gantt per plan × scenario (withAI / noAI)
+│   │   ├── block_defensibility_register.md          ← optional, conditional: large-block DEFEND/TRIM/DECOMPOSE verdicts
+│   │   ├── open_items_crosswalk.md                  ← optional, conditional: open items × schedule impact × owner action
+│   │   └── director_briefing/                       ← optional, conditional: presenter + sanitized customer deck (HTML+PDF)
 │   │
 │   ├── ui_design/                                    ← Phase 4a: ui-ux-design (if any UI)
 │   │   ├── ui_ux_pages.md                           ← Screen inventory, user journeys, design tokens
@@ -159,7 +162,7 @@ ai-driven-development/
 | 2 | legacy-architecture | `docs/legacy_architecture/legacy_architecture.md` + `.html` |
 | 2.5 | Tech Stack Gate | `docs/tech_stack_selections.md` |
 | 3 | target-architecture | `docs/target_architecture/target_architecture.md` + `.html` |
-| 3.5 | delivery-planning | `docs/implementation_planning/` (implementation_plan.md + executive_summary.md + frontend_page_inventory.md + service_module_inventory.md + dependency_graph.html + scenario_matrix.html + gantt_{plan}_{scenario}.html) |
+| 3.5 | delivery-planning | `docs/implementation_planning/` (implementation_plan.md + executive_summary.md + frontend_page_inventory.md + service_module_inventory.md + dependency_graph.html + scenario_matrix.html + gantt_{plan}_{scenario}.html; optional/conditional: block_defensibility_register.md + open_items_crosswalk.md + director_briefing/) |
 | 4a | ui-ux-design | `docs/ui_design/ui_ux_pages.md` + `.html` + `tokens.json` + `component_api.md` + `design-implementation-checklist.md` + `storybook_stubs/` |
 | 4b | backend-development | `development/be_development_todo.md` + `development/backend_development/` |
 | 4c | frontend-development | `development/fe_development_todo.md` + `development/frontend_development/` |

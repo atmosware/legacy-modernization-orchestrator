@@ -2,8 +2,8 @@
 name: delivery-planning
 description: 'Phase 3.5 (optional) implementation planning and effort estimation. Use when: producing a business-owner-facing delivery plan, comparing alternative implementation strategies, estimating effort and calendar time under different team sizes with and without agentic AI tooling, building a work breakdown with dependencies, identifying parallelizable work streams, or refreshing the plan after scope/tech-stack change. Runs a constraints-first, plans-second two-gate flow. Never blocking.'
 argument-hint: 'Project name (Phase 1–3 artifacts are read automatically from ai-driven-development/docs/)'
-version: 1.0.0
-last_reviewed: 2026-07-09
+version: 1.1.0
+last_reviewed: 2026-07-20
 status: Active
 ---
 
@@ -35,6 +35,7 @@ This phase produces **plans and numbers only** — it writes no application code
 
 **Output directory:** `ai-driven-development/docs/implementation_planning/`
 **Standards / templates:** [`STANDARDS.md`](./STANDARDS.md) — HTML+Mermaid page template, gantt/DAG/matrix diagram rules, mermaid validation checklist, and all report table templates.
+**Extended artifacts:** [`EXTENDED_ARTIFACTS.md`](./EXTENDED_ARTIFACTS.md) — optional/conditional techniques (AI-gain sensitivity band, portion-split estimation, block defensibility register, open-item crosswalk, customer-facing deck, commercial-language sanitization). Read the relevant section only when its trigger condition is met (see § Step 9.1 and § Estimation Model below).
 
 > **Evidence-based rule:** every inventory item (page, endpoint, service, module, cross-cutting item) MUST trace to a Phase 1–3 artifact (or `ui_design/` when present). No invented pages or services. Cite the source artifact + section for each item.
 
@@ -151,6 +152,17 @@ Compare all approved plans with a scored decision matrix whose criteria weights 
 ### Step 9 — Assemble outputs & (re-run) diff
 Write all files under `ai-driven-development/docs/implementation_planning/` (see **§ Output Artifacts**). If a previous `implementation_plan.md` exists, prepend a **"What changed since the last plan"** section: added/removed plans, changed constraints, changed estimates, and why. Update `redesign_progress.md` (mark Phase 3.5 status). Verify the Definition of Done.
 
+### Step 9.1 — Optional customer-facing artifacts *(conditional — check every trigger, produce only what triggers)*
+Do not produce these by default. Check each condition; when true, follow the linked section of [`EXTENDED_ARTIFACTS.md`](./EXTENDED_ARTIFACTS.md) in full.
+
+| Artifact | Trigger | Reference |
+|---|---|---|
+| `block_defensibility_register.md` | Business owner is billed/planned by effort **and** the recommended plan's gantt has ≥1 block ≥5 work-weeks (≈25 wd) | [§ 3](./EXTENDED_ARTIFACTS.md#3-block-defensibility-register) |
+| `open_items_crosswalk.md` | Carried-forward open items exist **and** the business owner (or a review) needs each item's schedule impact and owner action made explicit, beyond the Assumptions Register | [§ 4](./EXTENDED_ARTIFACTS.md#4-open-item-crosswalk) |
+| `director_briefing/` deck | A director/executive-level visual readout is needed, distinct from the markdown reports and diagrams | [§ 5](./EXTENDED_ARTIFACTS.md#5-customer-facing-presentation-deck) |
+
+If the deck (or any other artifact a customer will see) is produced, apply commercial-language sanitization to its customer-facing tier before calling it done — [§ 6](./EXTENDED_ARTIFACTS.md#6-commercial-language-sanitization).
+
 ---
 
 ## WBS Requirements
@@ -218,6 +230,10 @@ Effort_withAI = Effort_noAI × (1 − factor)      // factor = category reductio
 
 The AI factor applies to the PERT expected value of the item's *implementation* effort; it does NOT reduce coordination/review/UAT beyond the last row's range.
 
+**AI-gain sensitivity band (always report, not optional).** Once the per-category factors are applied across the full WBS, compute the PERT-weighted blended reduction — this is the **stretch** figure. Cross-check it against published AI-coding productivity evidence (task-level studies, field trials, RCTs on mature codebases; cite the source class, never fabricate a citation). If the bottom-up stretch exceeds the field-trial range, set a **base** case near the field-trial midpoint and report both — base as the planning/commitment figure, stretch as the labeled "optimistic ceiling, not the expected case." Name a binding **re-measure gate** (the WBS point at which the assumed factor is replaced with observed velocity) as a numbered assumption and a risk-register row. Full method and template: [`EXTENDED_ARTIFACTS.md` § 1](./EXTENDED_ARTIFACTS.md#1-ai-gain-sensitivity-band).
+
+**Portion-split estimation (use when a WBS row is internally heterogeneous).** If a single row mixes sub-work with materially different novelty/integration/business-rule density such that one flat category factor misrepresents it, split the row's O/M/P into cited sub-portions, each with its own category and factor, summing back to the original three-point estimate. A split that changes the row's PERT E is a re-baseline, not a split — label it as such. Method and guardrails: [`EXTENDED_ARTIFACTS.md` § 2](./EXTENDED_ARTIFACTS.md#2-portion-split-estimation).
+
 ### 3. Team-Size Scaling *(never linear division by headcount)*
 Apply three effects:
 
@@ -276,6 +292,9 @@ All under `ai-driven-development/docs/implementation_planning/`:
 | `dependency_graph.html` | Mermaid DAG with critical path highlighted. |
 | `gantt_<plan>_<scenario>.html` | Mermaid gantt charts (≥ recommended plan, with-AI and without-AI). |
 | `scenario_matrix.html` | Visual comparison of all plan × team × AI scenarios. |
+| `block_defensibility_register.md` *(optional, conditional)* | Per-block DEFEND/TRIM/DECOMPOSE verdicts for large gantt blocks. See § Step 9.1. |
+| `open_items_crosswalk.md` *(optional, conditional)* | Itemized carried-forward open items × schedule impact × owner action. See § Step 9.1. |
+| `director_briefing/` *(optional, conditional)* | Director/executive presentation deck (HTML + PDF), presenter and sanitized customer tiers. See § Step 9.1. |
 
 Every report carries a visible banner: **"⚠ Planning estimate — not a commitment. Confidence: ±X%."** State a confidence level per plan.
 
@@ -288,6 +307,7 @@ Every report carries a visible banner: **"⚠ Planning estimate — not a commit
 - **Self-contained.** All formulas (PERT, communication overhead, AI factors) are defined here so results reproduce across sessions.
 - **Evidence-based.** Every WBS item traces to a Phase 1–3 (or `ui_design/`) artifact. No invented pages/services.
 - **Non-blocking.** Declining this phase never halts the modernization; the orchestrator proceeds to Phase 4.
+- **Commercial-language sanitization.** Any artifact tier a customer will see (e.g. the presentation tier of `director_briefing/`) must not expose internal billing/commitment framing ("recommended commit/billing case", "billing floor", etc.). The internal/presenter tier may keep this language. See [`EXTENDED_ARTIFACTS.md` § 6](./EXTENDED_ARTIFACTS.md#6-commercial-language-sanitization).
 
 ---
 
@@ -314,3 +334,8 @@ Every report carries a visible banner: **"⚠ Planning estimate — not a commit
 - [ ] Planning-estimate banner + per-plan confidence level visible in the report
 - [ ] On re-run: diff vs previous plan version summarized
 - [ ] `CLAUDE.md` roster + orchestrator agent offer Phase 3.5 (framework integration — one-time, verified at install)
+- [ ] AI-gain sensitivity band reported (base + stretch, cross-checked against cited external evidence) with a named re-measure gate (`EXTENDED_ARTIFACTS.md` § 1)
+- [ ] Step 9.1 optional-artifact triggers evaluated; each triggered artifact produced, each non-triggered one explicitly skipped (not silently omitted)
+- [ ] If `block_defensibility_register.md` was triggered: every ≥5-wk block has a DEFEND/TRIM/DECOMPOSE verdict with cited evidence
+- [ ] If `open_items_crosswalk.md` was triggered: every carried-forward open item has plan linkage, impact, and owner action
+- [ ] If `director_briefing/` was triggered: presenter and customer tiers both produced, customer tier sanitized per `EXTENDED_ARTIFACTS.md` § 6 (verified, not assumed)

@@ -28,6 +28,7 @@ const AGENTS = [
   'nexia-legacy-analysis',
   'nexia-legacy-architecture',
   'nexia-target-architecture',
+  'nexia-delivery-planning',
   'nexia-ui-ux-design',
   'nexia-backend-development',
   'nexia-frontend-development',

@@ -79,6 +79,27 @@
       "status": "active"
     },
     {
+      "name": "nexia-delivery-planning",
+      "phase": "3.5",
+      "tier": "1",
+      "skill_path": ".github/skills/nexia-delivery-planning/SKILL.md",
+      "agent_path": ".github/agents/nexia-delivery-planning.agent.md",
+      "required": "optional",
+      "depends_on": [
+        "target-architecture"
+      ],
+      "outputs": [
+        "ai-driven-development/docs/implementation_planning/implementation_plan.md",
+        "ai-driven-development/docs/implementation_planning/executive_summary.md",
+        "ai-driven-development/docs/implementation_planning/frontend_page_inventory.md",
+        "ai-driven-development/docs/implementation_planning/service_module_inventory.md",
+        "ai-driven-development/docs/implementation_planning/dependency_graph.html",
+        "ai-driven-development/docs/implementation_planning/scenario_matrix.html"
+      ],
+      "installer": true,
+      "status": "active"
+    },
+    {
       "name": "nexia-ui-ux-design",
       "phase": "4a",
       "tier": "1",

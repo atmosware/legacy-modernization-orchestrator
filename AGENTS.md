@@ -28,6 +28,7 @@ Phase 1 → Phase 2 → Phase 2.5 (Tech Stack Selection Gate) → Phase 3 → [S
 | 2 | `nexia-legacy-architecture` | Always |
 | 2.5 | `nexia-tech-stack-selection` | Always |
 | 3 | `nexia-target-architecture` | Always |
+| 3.5 | `nexia-delivery-planning` | Optional (offered after Phase 3; never blocking) |
 | 4a | `nexia-ui-ux-design` | If any client UI needed |
 | 4b | `nexia-backend-development` | Optional |
 | 4c | `nexia-frontend-development` | Optional |
@@ -69,6 +70,14 @@ Phase 1 → Phase 2 → Phase 2.5 (Tech Stack Selection Gate) → Phase 3 → [S
 **Use when:** Designing new modern system architecture, creating target state architecture, applying clean architecture hexagonal DDD microservices patterns, defining service boundaries bounded contexts API-first design, producing mermaid architecture diagrams in HTML, tech stack user-selected: Java/.NET/Python/Go backend, React/Vue/Angular/Svelte frontend, Kotlin mobile.  
 **Argument hint:** Project name or path to legacy analysis and legacy design artifacts  
 **Skill file:** `.github/skills/nexia-target-architecture/SKILL.md`
+
+---
+
+### `nexia-delivery-planning` _(Phase 3.5 — Optional)_
+**Use when:** Producing a business-owner-facing implementation planning and effort-estimation report — alternative delivery strategies, effort and calendar-time estimates under different team sizes with and without agentic AI tooling, full work breakdown with dependencies, and parallelizable work streams. Runs a constraints-first two-gate flow (elicit constraints → propose plan set → estimate). Offered after Phase 3 DoD passes; the business owner may decline. Never blocking. Supports standalone re-run to refresh the plan when scope or tech stack changes.  
+**Argument hint:** Project name (reads Phase 1–3 artifacts automatically)  
+**Skill file:** `.github/skills/nexia-delivery-planning/SKILL.md`  
+**Output:** `ai-driven-development/docs/implementation_planning/`
 
 ---
 

@@ -19,7 +19,7 @@ argument-hint: 'Legacy project path or name to begin full end-to-end redesign wo
 ## Phase Overview
 
 ```
-Phase 1 → Phase 2 → Phase 2.5 → Phase 3 → [Scope Selection] → Phase 4 (optional parallel phases) → Phase 5 → Phase 6
+Phase 1 → Phase 2 → Phase 2.5 → Phase 3 → [Phase 3.5 offered — optional] → [Scope Selection] → Phase 4 (optional parallel phases) → Phase 5 → Phase 6
 ```
 
 > **Before Phase 4, the orchestrator MUST confirm which development targets are needed.**
@@ -32,6 +32,7 @@ Phase 1 → Phase 2 → Phase 2.5 → Phase 3 → [Scope Selection] → Phase 4 
 | 2 | [`nexia-legacy-architecture`](./legacy-architecture.agent.md) | Legacy Architecture Visualization | Always |
 | 2.5 | [`nexia-tech-stack-selection`](../skills/nexia-tech-stack-selection/SKILL.md) | User confirms all target tech choices | Always |
 | 3 | [`nexia-target-architecture`](./target-architecture.agent.md) | Target Architecture Design | Always |
+| 3.5 | [`nexia-delivery-planning`](./nexia-delivery-planning.agent.md) | Implementation Planning & Effort Estimation | **Optional** — offered after Phase 3; never blocking |
 | 4a | [`nexia-ui-ux-design`](./ui-ux-design.agent.md) | UX & Interface Design | If any client UI needed |
 | 4b | [`nexia-backend-development`](./backend-development.agent.md) | Backend Implementation | **Optional** |
 | 4c | [`nexia-frontend-development`](./frontend-development.agent.md) | Web Frontend Implementation | **Optional** |
@@ -88,6 +89,7 @@ Phase 1 → Phase 2 → Phase 2.5 → Phase 3 → [Scope Selection] → Phase 4 
 9. **Use a second-model review for critical decisions when available** — for high-impact decisions (for example: target architecture trade-offs, security findings, data migration strategy, cutover/go-no-go decisions, or any argued topic without a clear evidence-based winner), request a review from a different but similarly capable LLM if the environment provides one. If the primary and reviewer outputs materially disagree, or neither is clearly stronger based on evidence, present the alternatives, trade-offs, and your recommendation to the user and proceed only after explicit user approval.
 10. **Validate all Mermaid diagrams after generation** — after any agent produces HTML output containing Mermaid diagrams, run `node scripts/validate-mermaid.js` from the repository root. If errors are reported, run `node scripts/validate-mermaid.js --fix` to auto-fix common issues, then manually correct any remaining errors before marking the phase complete. A phase with broken diagram renders does not satisfy its DoD.
 11. **Choose dependencies from stable, supported release lines** — prefer LTS or current stable releases, avoid prerelease channels (`beta`, `rc`, `canary`, `preview`, `next`) unless explicitly requested, and never invent exact package versions without verifying them from project files or authoritative release sources available in the runtime.
+12. **Offer Phase 3.5 (`nexia-delivery-planning`) after Phase 3 DoD passes** — present the nexia-delivery-planning option to the business owner (implementation plan + effort/calendar estimates + parallelism analysis). If declined, mark it `N/A` and proceed; **never block Phase 4 on it**. It may also be run standalone at any time before or during Phase 4 to refresh the plan.
 
 ---
 
@@ -152,6 +154,7 @@ Create `ai-driven-development/redesign_progress.md` to track all phases:
 | 2 | nexia-legacy-architecture | ⬜ Not Started | — | — | |
 | 2.5 | nexia-tech-stack-selection | ⬜ Not Started | — | — | |
 | 3 | nexia-target-architecture | ⬜ Not Started | — | — | |
+| 3.5 | nexia-delivery-planning | ⬜ N/A | — | — | ← optional; offered after Phase 3, business owner may decline |
 | 4a | nexia-ui-ux-design | ⬜ N/A | — | — | ← if not in scope |
 | 4b | nexia-backend-development | ⬜ N/A | — | — | ← if not in scope |
 | 4c | nexia-frontend-development | ⬜ N/A | — | — | ← if not in scope |
@@ -371,6 +374,29 @@ Record both the preliminary and refined ranges, plus the user confirmation decis
 - [ ] Data ownership defined (no cross-context DB sharing)
 - [ ] At least 3 ADRs documented
 - [ ] Design reviewed by 2 senior engineers
+
+---
+
+## Phase 3.5: Delivery Planning & Effort Estimation *(Optional — offered, never blocking)*
+**Agent**: [`nexia-delivery-planning`](./nexia-delivery-planning.agent.md)
+**Role**: Senior Software Architect & Delivery Manager
+
+**Requires**: Phase 3 complete (`target_architecture.md` exists) + `tech_stack_selections.md`. Reads `ui_design/` if Phase 4a already ran.
+
+**Offer (after Phase 3 DoD passes):**
+> "Target architecture is complete. Before development, I can produce a **delivery plan and effort estimate** for the business owner — alternative implementation strategies, effort and calendar time under different team sizes (with and without agentic AI tooling), a full work breakdown with dependencies, and what can run in parallel. This is optional and will not delay development. Run Phase 3.5 now, run it later, or skip it?"
+
+- If the business owner **declines** → mark Phase 3.5 `N/A` in the tracker and proceed to Scope Selection / Phase 4. **Never block on this phase.**
+- If they **accept** → invoke the `nexia-delivery-planning` agent. It runs a constraints-first two-gate flow (Gate 1 constraints → conflict check → Gate 2 plan-set approval → estimation) before writing the report.
+- Re-runnable standalone at any point (before or during Phase 4) to refresh the plan when scope, team size, or tech stack changes.
+
+**Conflict handling:** if Gate 1 surfaces a business constraint that contradicts the approved target state (e.g. "keep DB as-is" vs a new Phase 3 schema), the agent presents it as a plan variant, or recommends re-running Phase 3 / Phase 2.5, or records the constraint's withdrawal — it does not silently plan around it.
+
+**Produce** (in `ai-driven-development/docs/implementation_planning/`):
+- `implementation_plan.md`, `executive_summary.md`, `frontend_page_inventory.md`, `service_module_inventory.md`
+- `dependency_graph.html`, `scenario_matrix.html`, `gantt_<plan>_<scenario>.html`
+
+**DoD Gate** — authoritative checklist in [`../skills/nexia-delivery-planning/SKILL.md`](../skills/nexia-delivery-planning/SKILL.md). Phase 3.5 completion is **not** a prerequisite for Phase 4.
 
 ---
 

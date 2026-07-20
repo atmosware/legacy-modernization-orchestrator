@@ -1,0 +1,127 @@
+{
+  "skill": "nexia-delivery-planning",
+  "version": "1.0.0",
+  "generated_from": "SKILL.md — run 'node scripts/generate-dod.js' to regenerate",
+  "items": [
+    {
+      "id": "DELI-01",
+      "description": "All preflight artifacts verified (or missing ones reported and the run halted)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-02",
+      "description": "Gate 1 completed: constraints & expectations register recorded, every item classified Hard / Preference / Open",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-03",
+      "description": "Conflict check run against `target_architecture.md` and `tech_stack_selections.md`; all conflicts resolved and the resolution recorded",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-04",
+      "description": "Gate 2 completed: candidate plan set presented and explicitly approved (or modified) by the user before estimation",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-05",
+      "description": "≥2 approved plans fully described and estimated, each citing which constraints it satisfies (by register ID)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-06",
+      "description": "Frontend page inventory complete — every page traceable to Phase 1/3/4a evidence, each with API consumption listed",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-07",
+      "description": "Service/module inventory complete — every item traceable to target architecture, each with complexity rationale",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-08",
+      "description": "Cross-cutting WBS items included (CI/CD, migration, testing, cutover, etc.)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-09",
+      "description": "Every WBS item has three-point estimates for both with-AI and without-AI, with the applied productivity factor visible",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-10",
+      "description": "Team-size scenarios computed with critical-path and communication-overhead modeling (not linear division)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-11",
+      "description": "Scenario matrix present and consistent with per-item estimates (spot-check sums)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-12",
+      "description": "Dependency DAG and critical path rendered as valid mermaid HTML (passes `node scripts/validate-mermaid.js`)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-13",
+      "description": "Gantt charts rendered for at least the recommended plan (both AI scenarios)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-14",
+      "description": "Assumptions register and risk register present",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-15",
+      "description": "Executive summary readable by a non-technical business owner",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-16",
+      "description": "Recommendation with scored decision matrix present (weights derived from Gate 1 A1 ranking)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-17",
+      "description": "Planning-estimate banner + per-plan confidence level visible in the report",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-18",
+      "description": "On re-run: diff vs previous plan version summarized",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-19",
+      "description": "`CLAUDE.md` roster + orchestrator agent offer Phase 3.5 (framework integration — one-time, verified at install)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-20",
+      "description": "AI-gain sensitivity band reported (base + stretch, cross-checked against cited external evidence) with a named re-measure gate (`EXTENDED_ARTIFACTS.md` § 1)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-21",
+      "description": "Step 9.1 optional-artifact triggers evaluated; each triggered artifact produced, each non-triggered one explicitly skipped (not silently omitted)",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-22",
+      "description": "If `block_defensibility_register.md` was triggered: every ≥5-wk block has a DEFEND/TRIM/DECOMPOSE verdict with cited evidence",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-23",
+      "description": "If `open_items_crosswalk.md` was triggered: every carried-forward open item has plan linkage, impact, and owner action",
+      "verifier": "manual"
+    },
+    {
+      "id": "DELI-24",
+      "description": "If `director_briefing/` was triggered: presenter and customer tiers both produced, customer tier sanitized per `EXTENDED_ARTIFACTS.md` § 6 (verified, not assumed)",
+      "verifier": "glob"
+    }
+  ]
+}

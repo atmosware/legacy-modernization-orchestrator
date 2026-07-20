@@ -39,6 +39,7 @@ When invoked for any legacy modernization task, you MUST:
 | 2 | `nexia-legacy-architecture` | Always |
 | 2.5 | Tech Stack Selection Gate | Always |
 | 3 | `nexia-target-architecture` | Always |
+| 3.5 | `nexia-delivery-planning` | Optional — offered after Phase 3 DoD passes; never blocking |
 | 4a | `nexia-ui-ux-design` | If any client UI needed |
 | 4b | `nexia-backend-development` | Optional |
 | 4c | `nexia-frontend-development` | Optional |
@@ -52,6 +53,8 @@ When invoked for any legacy modernization task, you MUST:
 | 6 | `nexia-final-validation` | After Phase 5 |
 
 > Phase 4a must complete before 4c/4d/4e/4i (they depend on wireframes); 4a can run in parallel with 4b; 4b/4c/4d/4e/4i can run in parallel with each other as scope allows. **4i is mutually exclusive with 4d/4e for the same mobile target** — do not run both native and cross-platform for the same platform. Before entering Phase 4, present the auto-detected development targets from Phase 1 for confirmation; ask directly only if Phase 1 is unavailable or ambiguous.
+>
+> **Phase 3.5 (`nexia-delivery-planning`) is optional and never blocking.** After Phase 3 DoD passes, the orchestrator **offers** it; if the business owner declines, proceed directly to Phase 4. It may run any time after Phase 3 and before or during Phase 4, and supports **standalone re-run** to refresh the plan when scope or tech stack changes. It reads Phase 1–3 artifacts (and `ui_design/` if Phase 4a already ran) and produces plans/estimates only — it never changes target-architecture decisions or gates Phase 4.
 
 ---
 
@@ -73,6 +76,15 @@ Legacy architecture visualization — component diagrams, data flow maps, mermai
 Target architecture design — Clean/Hexagonal/DDD patterns, service boundaries, API-first design, user-selected: Java/.NET/Python/Go backend, React/Vue/Angular/Svelte frontend, Kotlin mobile stack.  
 **Skill:** `.github/skills/nexia-target-architecture/SKILL.md`  
 **Output dir:** `ai-driven-development/docs/target_architecture/`
+
+---
+
+### `nexia-delivery-planning` _(Phase 3.5 — Optional, non-blocking)_
+Implementation planning & effort estimation for business owners — alternative delivery strategies, effort and calendar-time estimates under different team sizes (with and without agentic AI tooling), full work breakdown with dependencies, and parallelizable work streams. Runs a **constraints-first two-gate flow**: Gate 1 elicits business constraints/expectations (classified Hard/Preference/Open) and cross-checks them against the target state; Gate 2 proposes 2–4 candidate plans for approval; only then does estimation run. Offered after Phase 3 DoD passes — the business owner may decline. Supports standalone re-run to refresh the plan when scope or tech stack changes.  
+**Trigger:** Runnable any time after Phase 3 completes, before or during Phase 4.  
+**Skill:** `.github/skills/nexia-delivery-planning/SKILL.md`  
+**Output dir:** `ai-driven-development/docs/implementation_planning/`  
+**Prerequisites:** `legacy_analysis/legacy_analysis.md`, `legacy_architecture/legacy_architecture.md`, `tech_stack_selections.md`, and `target_architecture/target_architecture.md` must exist. `ui_design/` is optional — when absent, the page inventory is derived from legacy analysis + target architecture and marked "derived, pending UI/UX confirmation".
 
 ---
 

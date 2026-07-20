@@ -14,7 +14,7 @@ This framework uses a **two-tier standards model**:
 **Rules:**
 - Tier 1 always takes precedence over Tier 2 where they overlap
 - Tier 2 files must not contradict Tier 1 — they only add technology-specific detail
-- Language-specific STANDARDS.md files (e.g., `java-springboot/STANDARDS.md`, `dotnet-aspnetcore/STANDARDS.md`) are a sub-category of Tier 2 — they extend both `backend-development/STANDARDS.md` (Tier 2) and this file (Tier 1)
+- Language-specific STANDARDS.md files (e.g., `nexia-java-springboot/STANDARDS.md`, `nexia-dotnet-aspnetcore/STANDARDS.md`) are a sub-category of Tier 2 — they extend both `nexia-backend-development/STANDARDS.md` (Tier 2) and this file (Tier 1)
 
 All skills MUST conform to these standards. Tier 2 STANDARDS.md files are technology-specific extensions of this document.
 
@@ -315,7 +315,7 @@ All feature-coverage tables in comparison reports MUST use exactly these five st
 
 **Rules:**
 - Use `🔄 Planned` (not `❌`) when a delivery commitment exists — this is a different risk profile from `❌ Missing`.
-- A `❌ Missing` item on a critical feature is a hard go/no-go blocker; `final-validation` must surface all such items.
+- A `❌ Missing` item on a critical feature is a hard go/no-go blocker; `nexia-final-validation` must surface all such items.
 - `🗑️ Removed` requires a written justification in the comparison report; it cannot be assumed.
 - Downstream tooling (scripts, CI checks) must match against these exact Unicode strings.
 
@@ -332,19 +332,19 @@ Last updated: YYYY-MM-DD
 
 | Phase | Agent | Status | Completed At | Notes |
 |---|---|---|---|---|
-| 1 | legacy-analysis | ✅ Complete | YYYY-MM-DD | |
-| 2 | legacy-architecture | ✅ Complete | YYYY-MM-DD | |
+| 1 | nexia-legacy-analysis | ✅ Complete | YYYY-MM-DD | |
+| 2 | nexia-legacy-architecture | ✅ Complete | YYYY-MM-DD | |
 | 2.5 | Tech Stack Selection | ✅ Complete | YYYY-MM-DD | Java Spring Boot, React |
-| 3 | target-architecture | 🔄 In Progress | — | |
-| 4a | ui-ux-design | ⏳ Not Started | — | |
-| 4b | backend-development | ⏳ Not Started | — | |
-| 4c | frontend-development | ⏳ Not Started | — | |
-| 4d | ios-development | N/A | — | Not in scope |
-| 4e | android-development | N/A | — | Not in scope |
-| 4f | data-migration | ⏳ Not Started | — | |
-| 4g | security-review | ⏳ Not Started | — | |
-| 5 | compare-legacy-to-new | ⏳ Not Started | — | |
-| 6 | final-validation | ⏳ Not Started | — | |
+| 3 | nexia-target-architecture | 🔄 In Progress | — | |
+| 4a | nexia-ui-ux-design | ⏳ Not Started | — | |
+| 4b | nexia-backend-development | ⏳ Not Started | — | |
+| 4c | nexia-frontend-development | ⏳ Not Started | — | |
+| 4d | nexia-ios-development | N/A | — | Not in scope |
+| 4e | nexia-android-development | N/A | — | Not in scope |
+| 4f | nexia-data-migration | ⏳ Not Started | — | |
+| 4g | nexia-security-review | ⏳ Not Started | — | |
+| 5 | nexia-compare-legacy-to-new | ⏳ Not Started | — | |
+| 6 | nexia-final-validation | ⏳ Not Started | — | |
 ```
 
 Status values: `✅ Complete` | `🔄 In Progress` | `⏳ Not Started` | `N/A`
@@ -369,7 +369,7 @@ Every `SKILL.md` file under `.github/skills/` MUST begin with a YAML frontmatter
 |---|---|---|---|
 | `version` | string | Semantic version `MAJOR.MINOR.PATCH` | Current version of the skill content; bump `MINOR` for new steps or DoD items, `MAJOR` for breaking changes to outputs |
 | `last_reviewed` | string | `YYYY-MM-DD` | Date the skill was last substantively reviewed; drives quarterly review queue |
-| `status` | string | `Active` \| `Deprecated` \| `Retired` | Lifecycle state per `agent-governance/SKILL.md` §9; defaults to `Active` when absent |
+| `status` | string | `Active` \| `Deprecated` \| `Retired` | Lifecycle state per `nexia-agent-governance/SKILL.md` §9; defaults to `Active` when absent |
 
 Bump `version` and update `last_reviewed` in the same commit as any material skill change (new step, revised DoD gate, changed output path).
 
@@ -388,12 +388,12 @@ status: Active
 
 ### Rules
 
-- **`name`** must equal the directory name of the skill (e.g., `legacy-analysis` for `.github/skills/legacy-analysis/SKILL.md`). CI will fail if they diverge.
+- **`name`** must equal the directory name of the skill (e.g., `nexia-legacy-analysis` for `.github/skills/nexia-legacy-analysis/SKILL.md`). CI will fail if they diverge.
 - **`description`** must be a single line (no newlines). Descriptions > 500 chars generate a CI warning; descriptions > 800 chars are a CI error.
-- **`argument-hint`** is required on all skills. For advisory reference skills that take no argument (e.g., `agent-governance`, `quality-playbook`), use the value `"no argument required"` — do not omit the field.
+- **`argument-hint`** is required on all skills. For advisory reference skills that take no argument (e.g., `nexia-agent-governance`, `nexia-quality-playbook`), use the value `"no argument required"` — do not omit the field.
 - **`version`** must follow `MAJOR.MINOR.PATCH` semver. Start at `1.0.0` for all existing skills.
 - **`last_reviewed`** must be `YYYY-MM-DD`. CI warns if the date is more than 365 days in the past.
-- **`status`** must be one of `Active`, `Deprecated`, or `Retired`. When `Deprecated`, `deprecated_since`, `sunset_date`, and `successor` fields are also required (see `agent-governance/SKILL.md` §9).
+- **`status`** must be one of `Active`, `Deprecated`, or `Retired`. When `Deprecated`, `deprecated_since`, `sunset_date`, and `successor` fields are also required (see `nexia-agent-governance/SKILL.md` §9).
 - Frontmatter must be fenced with `---` on both sides, with no blank lines inside the block.
 
 ### Enforcement

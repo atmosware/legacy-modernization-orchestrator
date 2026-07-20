@@ -9,14 +9,14 @@
  *   1. bin/install.js        — AGENTS array matches all installer:true entries in roster
  *   2. AGENTS.md             — phase table references every phased Tier-1 skill
  *   3. CLAUDE.md             — Agent Roster section references every phased Tier-1 skill
- *   4. Orchestrator agent    — phase table in .github/agents/legacy-modernization-orchestrator.agent.md
+ *   4. Orchestrator agent    — phase table in .github/agents/nexia-orchestrator.agent.md
  *                              has a row for every phased Tier-1 skill
  *   5. README.md             — agent section mentions every installer:true skill name
  *   6. STANDARDS_OUTPUTS.md  — output directories listed in roster appear in the artifact tree
  *   7. Disk                  — every skill_path and agent_path from roster exists on disk
  *   8. Frontmatter schema    — every SKILL.md has name/description/argument-hint per core.md §12
  *   9. Version metadata      — every SKILL.md has version/last_reviewed per core.md §12
- *  10. Deprecation status    — warns on Deprecated skills, fails on Retired skills per agent-governance §9
+ *  10. Deprecation status    — warns on Deprecated skills, fails on Retired skills per nexia-agent-governance §9
  *  11. dod.json presence     — every skill with a SKILL.md has a valid dod.json per core.md §3
  *
  * Exit code: 0 if all checks pass, 1 if any divergence found.
@@ -123,7 +123,7 @@ const orchestratorPath = path.join(
   ROOT,
   '.github',
   'agents',
-  'legacy-modernization-orchestrator.agent.md',
+  'nexia-orchestrator.agent.md',
 );
 const orchestratorMd = fs.readFileSync(orchestratorPath, 'utf8');
 

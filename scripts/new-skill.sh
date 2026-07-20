@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# new-skill.sh — Scaffold a new skill for the legacy-modernization-orchestrator framework
+# new-skill.sh — Scaffold a new skill for the nexia-orchestrator framework
 #
 # Usage:
 #   bash scripts/new-skill.sh <skill-name>
@@ -17,6 +17,7 @@
 #   .claude/agents/<name>.md
 #   .claude/skills/<name>/SKILL.md
 #   .codex/skills/<name>/SKILL.md
+#   .cursor/agents/<name>.md
 
 set -euo pipefail
 
@@ -60,20 +61,21 @@ AGENT_FILE="$ROOT/.github/agents/$SKILL_NAME.agent.md"
 CLAUDE_AGENT_FILE="$ROOT/.claude/agents/$SKILL_NAME.md"
 CLAUDE_SKILL_DIR="$ROOT/.claude/skills/$SKILL_NAME"
 CODEX_SKILL_DIR="$ROOT/.codex/skills/$SKILL_NAME"
+CURSOR_AGENT_FILE="$ROOT/.cursor/agents/$SKILL_NAME.md"
 
 echo ""
 echo "Scaffolding skill: $SKILL_NAME  (tier=$TIER, phase=$PHASE)"
 echo "──────────────────────────────────────────────────────"
 
 # Guard: abort if any target file already exists
-for f in "$SKILL_DIR/SKILL.md" "$AGENT_FILE" "$CLAUDE_AGENT_FILE" "$CLAUDE_SKILL_DIR/SKILL.md" "$CODEX_SKILL_DIR/SKILL.md"; do
+for f in "$SKILL_DIR/SKILL.md" "$AGENT_FILE" "$CLAUDE_AGENT_FILE" "$CLAUDE_SKILL_DIR/SKILL.md" "$CODEX_SKILL_DIR/SKILL.md" "$CURSOR_AGENT_FILE"; do
   if [[ -e "$f" ]]; then
     echo "Error: '$f' already exists. Remove it or choose a different name."
     exit 1
   fi
 done
 
-mkdir -p "$SKILL_DIR" "$CLAUDE_SKILL_DIR" "$CODEX_SKILL_DIR"
+mkdir -p "$SKILL_DIR" "$CLAUDE_SKILL_DIR" "$CODEX_SKILL_DIR" "$(dirname "$CURSOR_AGENT_FILE")"
 
 # ── 1. .github/skills/<name>/SKILL.md ─────────────────────────────────────────
 cat > "$SKILL_DIR/SKILL.md" << SKILL_EOF
@@ -276,6 +278,18 @@ CODEX_SKILL_EOF
 
 echo "  created  .codex/skills/$SKILL_NAME/SKILL.md"
 
+# ── 7. .cursor/agents/<name>.md ──────────────────────────────────────────────
+cat > "$CURSOR_AGENT_FILE" << CURSOR_AGENT_EOF
+---
+name: $SKILL_NAME
+description: "TODO: Cursor agent description. Use when: <trigger phrases>. NOT for: <exclusions>. Requires: <prerequisites>."
+---
+
+> **Canonical definition**: Read \`.github/agents/$SKILL_NAME.agent.md\` and follow every instruction defined there exactly. This file exists only to register the agent — all role, responsibilities, constraints, approach, and output format are in the canonical file.
+CURSOR_AGENT_EOF
+
+echo "  created  .cursor/agents/$SKILL_NAME.md"
+
 # ── Next steps ────────────────────────────────────────────────────────────────
 echo ""
 echo "✓ Scaffold complete. Next steps:"
@@ -299,8 +313,8 @@ echo '     }'
 echo ""
 echo "  3. Add '$SKILL_NAME' to the AGENTS array in bin/install.js."
 echo ""
-echo "  4. Add an entry to scripts/sync-wrappers.js WRAPPERS array,"
-echo "     then run: npm run sync:wrappers"
+echo "  4. Fill in the description TODO in .cursor/agents/$SKILL_NAME.md,"
+echo "     then run: npm run sync:wrappers  (syncs .claude, .codex, and .cursor wrappers)"
 echo ""
 echo "  5. Update AGENTS.md, CLAUDE.md, orchestrator agent, and STANDARDS_OUTPUTS.md."
 echo ""
